@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agency Landscape</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Agencies 26 Research Board</p>
+        <h1>Agency Landscape</h1>
+      </div>
+      <div class="stats" aria-label="Kennzahlen">
+        <div><strong id="statTotal">0</strong><span>Einträge</span></div>
+        <div><strong id="statShown">0</strong><span>sichtbar</span></div>
+        <div><strong id="statShortlist">0</strong><span>Shortlist</span></div>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="filters" aria-label="Filter">
+        <label class="search">
+          <span>Suche</span>
+          <input id="searchInput" type="search" placeholder="Firma, Ort, Domain, Profil">
+        </label>
+
+        <section>
+          <h2>Fähigkeiten</h2>
+          <div id="capabilityFilters" class="chip-grid"></div>
+        </section>
+
+        <section>
+          <h2>Sicherheit</h2>
+          <div id="confidenceFilters" class="chip-grid"></div>
+        </section>
+
+        <section>
+          <h2>Region</h2>
+          <div id="regionFilters" class="chip-grid"></div>
+        </section>
+
+        <button id="resetFilters" class="ghost-button" type="button">Filter zurücksetzen</button>
+      </aside>
+
+      <section class="workspace">
+        <nav class="view-tabs" aria-label="Ansichten">
+          <button class="active" data-view="map" type="button">Map</button>
+          <button data-view="cards" type="button">Cards</button>
+          <button data-view="matrix" type="button">Matrix</button>
+          <button data-view="shortlist" type="button">Shortlist</button>
+        </nav>
+
+        <section id="mapView" class="view active">
+          <div class="map-layout">
+            <article class="map-panel">
+              <div class="map-header">
+                <div>
+                  <h2>Landscape Map</h2>
+                  <p>Branding/Kommunikation bis Tech/Immersion, Commercial bis Kultur/Experience.</p>
+                </div>
+                <div id="legend" class="legend"></div>
+              </div>
+              <div class="svg-wrap">
+                <svg id="landscapeSvg" viewBox="0 0 980 620" role="img" aria-label="Agency Landscape Map"></svg>
+              </div>
+            </article>
+            <article id="detailPanel" class="detail-panel"></article>
+          </div>
+        </section>
+
+        <section id="cardsView" class="view">
+          <div id="cardsGrid" class="cards-grid"></div>
+        </section>
+
+        <section id="matrixView" class="view">
+          <div class="matrix-wrap">
+            <table id="matrixTable"></table>
+          </div>
+        </section>
+
+        <section id="shortlistView" class="view">
+          <div class="shortlist-toolbar">
+            <h2>Shortlist</h2>
+            <button id="copyShortlist" class="ghost-button" type="button">Als Text kopieren</button>
+          </div>
+          <div id="shortlistGrid" class="cards-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <div id="tooltip" class="tooltip" hidden></div>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
