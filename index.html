@@ -33,6 +33,7 @@
 
         <section>
           <h2>Sicherheit</h2>
+          <p class="filter-note">Recherche-Sicherheit: high = Website/Quelle klar bestätigt, medium = plausibel aber mit Einschränkung, low = unsicher oder keine belastbare Domain.</p>
           <div id="confidenceFilters" class="chip-grid"></div>
         </section>
 
@@ -57,10 +58,14 @@
             <article class="map-panel">
               <div class="map-header">
                 <div>
-                  <h2>Landscape Map</h2>
-                  <p>Branding/Kommunikation bis Tech/Immersion, Commercial bis Kultur/Experience.</p>
+                  <h2>Agency Map</h2>
+                  <p>Rote Punkte zeigen Städte/Regionen aus der Recherche. Scrollen zum Zoomen, ziehen zum Navigieren.</p>
                 </div>
-                <div id="legend" class="legend"></div>
+                <div class="map-controls">
+                  <button id="zoomOut" type="button" aria-label="Herauszoomen">-</button>
+                  <button id="resetMap" type="button">Reset</button>
+                  <button id="zoomIn" type="button" aria-label="Hineinzoomen">+</button>
+                </div>
               </div>
               <div class="svg-wrap">
                 <svg id="landscapeSvg" viewBox="0 0 980 620" role="img" aria-label="Agency Landscape Map"></svg>
