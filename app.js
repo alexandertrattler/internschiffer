@@ -94,6 +94,7 @@ const state = {
   capabilityFilters: new Set(),
   countryFilters: new Set(),
   cityFilters: new Set(),
+  sortMode: "name",
   shortlistOnly: false,
   shortlist: new Set(JSON.parse(localStorage.getItem("agencyShortlist") || "[]"))
 };
@@ -106,6 +107,7 @@ const els = {
   cityFilters: document.querySelector("#cityFilters"),
   shortlistFilter: document.querySelector("#shortlistFilter"),
   shortlistFilterCount: document.querySelector("#shortlistFilterCount"),
+  sortOptions: document.querySelectorAll("[data-sort]"),
   filterResizeHandle: document.querySelector("#filterResizeHandle"),
   resetFilters: document.querySelector("#resetFilters"),
   cardsGrid: document.querySelector("#cardsGrid"),
@@ -280,6 +282,12 @@ const filterAgencies = () => {
       matchesCityFilters(agency) &&
       matchesShortlistFilter(agency);
   });
+  sortAgencies();
+};
+
+const sortAgencies = () => {
+  if (state.sortMode !== "name") return;
+  state.filtered.sort((a, b) => a.name.localeCompare(b.name, "de", { sensitivity: "base" }));
 };
 
 const agencyLink = (agency) => {
@@ -381,6 +389,13 @@ const init = () => {
     update();
   });
   els.shortlistFilter.addEventListener("click", toggleShortlistFilter);
+  els.sortOptions.forEach((buttonEl) => {
+    buttonEl.addEventListener("click", () => {
+      state.sortMode = buttonEl.dataset.sort;
+      els.sortOptions.forEach((option) => option.classList.toggle("active", option === buttonEl));
+      update();
+    });
+  });
   setupResizableFilters();
 };
 

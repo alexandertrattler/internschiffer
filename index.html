@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agency Landscape</title>
-    <link rel="stylesheet" href="styles.css?v=dark-page-2">
+    <link rel="stylesheet" href="styles.css?v=sort-toolbar-1">
   </head>
   <body>
     <header class="meta-console" aria-label="Kennzahlen">
@@ -41,6 +41,12 @@
 
       <section class="workspace">
         <div class="cards-toolbar">
+          <div class="sort-control" aria-label="Sortierung">
+            <span>Sortieren</span>
+            <button class="sort-option active" type="button" data-sort="name">A-Z</button>
+            <button class="sort-option placeholder" type="button" disabled>Kategorie 1</button>
+            <button class="sort-option placeholder" type="button" disabled>Kategorie 2</button>
+          </div>
           <button id="shortlistFilter" class="chip shortlist-filter" type="button">
             <span>Nur Shortlist</span><span id="shortlistFilterCount" class="chip-count">0</span>
           </button>
