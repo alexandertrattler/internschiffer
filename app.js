@@ -94,18 +94,22 @@ const state = {
   capabilityFilters: new Set(),
   countryFilters: new Set(),
   cityFilters: new Set(),
+  shortlistOnly: false,
   shortlist: new Set(JSON.parse(localStorage.getItem("agencyShortlist") || "[]"))
 };
 
 const els = {
+  appShell: document.querySelector(".app-shell"),
   searchInput: document.querySelector("#searchInput"),
   capabilityFilters: document.querySelector("#capabilityFilters"),
   countryFilters: document.querySelector("#countryFilters"),
   cityFilters: document.querySelector("#cityFilters"),
+  shortlistFilter: document.querySelector("#shortlistFilter"),
+  shortlistFilterCount: document.querySelector("#shortlistFilterCount"),
+  filterResizeHandle: document.querySelector("#filterResizeHandle"),
   resetFilters: document.querySelector("#resetFilters"),
   cardsGrid: document.querySelector("#cardsGrid"),
   emptyState: document.querySelector("#emptyState"),
-  copyShortlist: document.querySelector("#copyShortlist"),
   statTotal: document.querySelector("#statTotal"),
   statShown: document.querySelector("#statShown"),
   statShortlist: document.querySelector("#statShortlist")
@@ -200,6 +204,8 @@ const matchesCountryFilters = (agency) => state.countryFilters.size === 0 ||
 const matchesCityFilters = (agency) => state.cityFilters.size === 0 ||
   agency.cityKeys.some((key) => state.cityFilters.has(key));
 
+const matchesShortlistFilter = (agency) => !state.shortlistOnly || state.shortlist.has(agency.id);
+
 const candidatesForCounts = (skip) => {
   const tokens = getSearchTokens();
   return state.agencies.filter((agency) => {
@@ -207,6 +213,7 @@ const candidatesForCounts = (skip) => {
     if (skip !== "capability" && !matchesCapabilityFilters(agency)) return false;
     if (skip !== "country" && !matchesCountryFilters(agency)) return false;
     if (skip !== "city" && !matchesCityFilters(agency)) return false;
+    if (!matchesShortlistFilter(agency)) return false;
     return true;
   });
 };
@@ -241,6 +248,9 @@ const renderFilters = () => {
     state.cityFilters.has(city.key),
     () => toggleSet(state.cityFilters, city.key)
   )));
+
+  els.shortlistFilter.classList.toggle("active", state.shortlistOnly);
+  els.shortlistFilterCount.textContent = state.shortlist.size;
 };
 
 const toggleSet = (set, value) => {
@@ -267,7 +277,8 @@ const filterAgencies = () => {
     return matchesSearch(agency, tokens) &&
       matchesCapabilityFilters(agency) &&
       matchesCountryFilters(agency) &&
-      matchesCityFilters(agency);
+      matchesCityFilters(agency) &&
+      matchesShortlistFilter(agency);
   });
 };
 
@@ -282,8 +293,9 @@ const shortlistButtonLabel = (id) => state.shortlist.has(id) ? "Entfernen" : "Sh
 const toggleShortlist = (id) => {
   if (state.shortlist.has(id)) state.shortlist.delete(id);
   else state.shortlist.add(id);
+  if (state.shortlistOnly && state.shortlist.size === 0) state.shortlistOnly = false;
   saveShortlist();
-  renderCards();
+  update();
 };
 
 const cardTemplate = (agency) => `
@@ -310,26 +322,35 @@ const renderCards = () => {
   });
 };
 
-const copyShortlist = async () => {
-  const text = state.agencies
-    .filter((agency) => state.shortlist.has(agency.id))
-    .map((agency) => `${agency.name} - ${agency.domain || "keine Domain"}\n${agency.cities.join(", ")}\n${agency.profile}\n${agency.sourceUrl}`)
-    .join("\n\n");
-  const payload = text || "Keine Shortlist-Einträge.";
-  if (navigator.clipboard?.writeText) {
-    await navigator.clipboard.writeText(payload);
-  } else {
-    const area = document.createElement("textarea");
-    area.value = payload;
-    document.body.append(area);
-    area.select();
-    document.execCommand("copy");
-    area.remove();
-  }
-  els.copyShortlist.textContent = "Kopiert";
-  setTimeout(() => {
-    els.copyShortlist.textContent = "Shortlist kopieren";
-  }, 1200);
+const toggleShortlistFilter = () => {
+  state.shortlistOnly = !state.shortlistOnly;
+  update();
+};
+
+const setupResizableFilters = () => {
+  const savedWidth = Number(localStorage.getItem("agencyFilterWidth"));
+  if (savedWidth) els.appShell.style.setProperty("--filter-width", `${savedWidth}px`);
+
+  let startX = 0;
+  let startWidth = 0;
+  const stopResize = () => document.body.classList.remove("resizing");
+
+  els.filterResizeHandle.addEventListener("pointerdown", (event) => {
+    startX = event.clientX;
+    startWidth = parseFloat(getComputedStyle(els.appShell).getPropertyValue("--filter-width"));
+    els.filterResizeHandle.setPointerCapture(event.pointerId);
+    document.body.classList.add("resizing");
+  });
+
+  els.filterResizeHandle.addEventListener("pointermove", (event) => {
+    if (!document.body.classList.contains("resizing")) return;
+    const width = Math.max(220, Math.min(520, startWidth + event.clientX - startX));
+    els.appShell.style.setProperty("--filter-width", `${width}px`);
+    localStorage.setItem("agencyFilterWidth", String(Math.round(width)));
+  });
+
+  els.filterResizeHandle.addEventListener("pointerup", stopResize);
+  els.filterResizeHandle.addEventListener("pointercancel", stopResize);
 };
 
 const update = () => {
@@ -355,10 +376,12 @@ const init = () => {
     state.capabilityFilters.clear();
     state.countryFilters.clear();
     state.cityFilters.clear();
+    state.shortlistOnly = false;
     els.searchInput.value = "";
     update();
   });
-  els.copyShortlist.addEventListener("click", copyShortlist);
+  els.shortlistFilter.addEventListener("click", toggleShortlistFilter);
+  setupResizableFilters();
 };
 
 init();

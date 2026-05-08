@@ -16,18 +16,20 @@
     <main class="app-shell">
       <aside class="filters" aria-label="Filter">
         <label class="search">
-          <span>Suche</span>
+          <span class="filter-heading">Suche</span>
           <input id="searchInput" type="search" placeholder="Firma, Ort, Domain, Profil, Tags">
         </label>
 
         <section>
-          <h2>Fähigkeiten</h2>
+          <h2>Themen</h2>
           <div id="capabilityFilters" class="chip-grid"></div>
         </section>
 
         <section>
-          <h2>Länder</h2>
-          <div id="countryFilters" class="chip-grid"></div>
+          <h2>Shortlist</h2>
+          <button id="shortlistFilter" class="chip shortlist-filter" type="button">
+            <span>Nur Shortlist</span><span id="shortlistFilterCount" class="chip-count">0</span>
+          </button>
         </section>
 
         <section>
@@ -36,15 +38,17 @@
           <div id="cityFilters" class="chip-grid"></div>
         </section>
 
+        <section>
+          <h2>Länder</h2>
+          <div id="countryFilters" class="chip-grid"></div>
+        </section>
+
         <button id="resetFilters" class="ghost-button" type="button">Filter zurücksetzen</button>
       </aside>
+      <div id="filterResizeHandle" class="resize-handle" aria-hidden="true"></div>
 
       <section class="workspace">
         <div class="workspace-header">
-          <div>
-            <p>Suche und Filter werden kombiniert: Suchbegriffe müssen passen, ausgewählte Fähigkeiten grenzen ein, Städte wirken als Ortsauswahl.</p>
-          </div>
-          <button id="copyShortlist" class="ghost-button compact-action" type="button">Shortlist kopieren</button>
         </div>
 
         <p id="emptyState" class="empty-detail" hidden>Keine Agentur passt zu den aktuellen Filtern.</p>

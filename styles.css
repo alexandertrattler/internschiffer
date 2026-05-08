@@ -12,6 +12,7 @@
   --red: #b84d45;
   --violet: #7858a6;
   --shadow: 0 16px 45px rgba(24, 33, 47, 0.08);
+  --filter-width: 300px;
 }
 
 * {
@@ -115,7 +116,7 @@ h2 {
 
 .app-shell {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: var(--filter-width) 8px minmax(0, 1fr);
   min-height: calc(100vh - 33px);
 }
 
@@ -130,6 +131,16 @@ h2 {
   border-right: 1px solid var(--line);
 }
 
+.resize-handle {
+  cursor: col-resize;
+  background: linear-gradient(90deg, transparent, #d7e0ea, transparent);
+}
+
+.resize-handle:hover,
+body.resizing .resize-handle {
+  background: #b8c7d7;
+}
+
 .filters section {
   margin-top: 18px;
 }
@@ -137,9 +148,14 @@ h2 {
 .search span {
   display: block;
   margin-bottom: 8px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
+}
+
+.filter-heading,
+.filters h2 {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .search input {
@@ -198,14 +214,15 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  min-width: 24px;
-  height: 24px;
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
   padding: 0;
-  color: #ffffff;
-  background: var(--blue);
+  color: var(--blue);
+  background: transparent;
+  border: 1px solid currentColor;
   border-radius: 999px;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
 }
 
@@ -216,8 +233,8 @@ h2 {
 }
 
 .filters .chip.active .chip-count {
-  color: var(--blue);
-  background: #ffffff;
+  color: #ffffff;
+  background: transparent;
 }
 
 .filter-note {
@@ -670,7 +687,7 @@ td.mark {
 
 /* Current two-column cards layout */
 .app-shell {
-  grid-template-columns: 300px minmax(0, 1fr);
+  grid-template-columns: var(--filter-width) 8px minmax(0, 1fr);
 }
 
 .workspace {
@@ -705,7 +722,7 @@ td.mark {
 }
 
 .cards-grid {
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .card {
@@ -777,6 +794,10 @@ td.mark {
     height: auto;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .resize-handle {
+    display: none;
   }
 
   .workspace-header {
