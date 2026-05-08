@@ -1,10 +1,10 @@
 :root {
-  color-scheme: light;
-  --ink: #1b1a20;
-  --muted: #6c6972;
-  --line: #d7d4dc;
-  --paper: #f3f2f5;
-  --panel: #ffffff;
+  color-scheme: dark;
+  --ink: #ffffff;
+  --muted: rgba(255, 255, 255, 0.62);
+  --line: rgba(255, 255, 255, 0.16);
+  --paper: #111016;
+  --panel: #17161c;
   --blue: #7c79ff;
   --accent: #7c79ff;
   --accent-dark: #4f4be8;
@@ -14,7 +14,7 @@
   --gold: #b9821e;
   --red: #b84d45;
   --violet: #7858a6;
-  --shadow: 0 0 0 1px rgba(124, 121, 255, 0.08), 0 16px 36px rgba(27, 26, 32, 0.08);
+  --shadow: 0 0 0 1px rgba(124, 121, 255, 0.14), 0 16px 40px rgba(0, 0, 0, 0.28);
   --filter-width: 300px;
   --radius: 4px;
 }
@@ -43,7 +43,9 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(124, 121, 255, 0.13), transparent 34rem),
+    linear-gradient(145deg, #111016 0%, #17161c 48%, #111016 100%);
   font-family: "Suisse Intl", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.3;
 }
@@ -59,7 +61,7 @@ input {
   justify-content: space-between;
   gap: 24px;
   padding: 26px 32px 22px;
-  background: #ffffff;
+  background: var(--dark-card);
   border-bottom: 1px solid var(--line);
 }
 
@@ -68,15 +70,17 @@ input {
   justify-content: flex-end;
   gap: 14px;
   padding: 8px 20px;
-  color: #74717b;
-  background: #f8f7fa;
+  color: var(--muted);
+  background:
+    linear-gradient(145deg, rgba(124, 121, 255, 0.08), transparent 42%),
+    var(--dark-card);
   border-bottom: 1px solid var(--line);
   font-size: 10px;
   text-transform: uppercase;
 }
 
 .meta-console strong {
-  color: var(--ink);
+  color: #ffffff;
   font-size: 11px;
 }
 
@@ -140,6 +144,7 @@ h2 {
   display: grid;
   grid-template-columns: var(--filter-width) 8px minmax(0, 1fr);
   min-height: calc(100vh - 33px);
+  background: transparent;
 }
 
 .filters {
@@ -149,13 +154,15 @@ h2 {
   height: calc(100vh - 33px);
   overflow: auto;
   padding: 22px 18px;
-  background: #faf9fb;
+  background:
+    linear-gradient(145deg, rgba(124, 121, 255, 0.08), transparent 42%),
+    var(--dark-card);
   border-right: 1px solid var(--line);
 }
 
 .resize-handle {
   cursor: col-resize;
-  background: linear-gradient(90deg, transparent, #d8d5df, transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
 }
 
 .resize-handle:hover,
@@ -185,8 +192,8 @@ body.resizing .resize-handle {
   width: 100%;
   min-height: 36px;
   padding: 8px 10px;
-  color: var(--ink);
-  background: #f3f2f5;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.055);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   outline: none;
@@ -212,8 +219,8 @@ body.resizing .resize-handle {
 .detail-actions button {
   min-height: 34px;
   padding: 8px 11px;
-  color: var(--ink);
-  background: #f3f2f5;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.055);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   cursor: pointer;
@@ -225,9 +232,9 @@ body.resizing .resize-handle {
   gap: 5px;
   min-height: 26px;
   padding: 4px 5px 4px 8px;
-  color: #37343d;
-  background: #f7f6f9;
-  border-color: #d8d5df;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   font-size: 11px;
   font-weight: 700;
@@ -287,12 +294,15 @@ body.resizing .resize-handle {
 .ghost-button {
   width: 100%;
   margin-top: 24px;
-  background: #faf9fb;
+  background: rgba(255, 255, 255, 0.055);
 }
 
 .workspace {
   min-width: 0;
   padding: 22px;
+  background:
+    linear-gradient(145deg, rgba(124, 121, 255, 0.07), transparent 42%),
+    var(--dark-card);
 }
 
 .view-tabs {
@@ -836,9 +846,9 @@ td.mark {
   gap: 5px;
   min-height: 26px;
   padding: 4px 5px 4px 8px;
-  color: #37343d;
-  background: #f7f6f9;
-  border: 1px solid #d8d5df;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   font-size: 11px;
   font-weight: 700;
