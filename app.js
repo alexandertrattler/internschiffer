@@ -58,7 +58,7 @@ const cityDefs = [
 
 const countryDefs = [
   ["de", "Deutschland"],
-  ["uk", "UK"],
+  ["uk", "Vereinigtes Königreich"],
   ["nl", "Niederlande"],
   ["at", "Österreich"],
   ["ch", "Schweiz"],
@@ -221,9 +221,9 @@ const renderFilters = () => {
   )));
 
   const countryCounts = countBy(candidatesForCounts("country"), (agency) => agency.countryKeys);
-  const countryChips = [...countryCounts.entries()]
-    .map(([key, count]) => ({ key, count, label: countryByKey(key).label }))
-    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "de"));
+  const countryChips = countryDefs
+    .map((country) => ({ ...country, count: countryCounts.get(country.key) || 0 }))
+    .filter((country) => country.count > 0 || state.countryFilters.has(country.key));
   els.countryFilters.replaceChildren(...countryChips.map((country) => makeChip(
     country.label,
     country.count,
@@ -289,8 +289,8 @@ const toggleShortlist = (id) => {
 const cardTemplate = (agency) => `
   <article class="card">
     <div class="card-topline">
-      <span class="confidence ${html(agency.confidence)}">${html(agency.confidence)}</span>
       <span class="city-line">${html(agency.countries.join(", "))} · ${html(agency.cities.join(", "))}</span>
+      <button class="star-button ${state.shortlist.has(agency.id) ? "active" : ""}" type="button" data-shortlist="${agency.id}" aria-label="${state.shortlist.has(agency.id) ? "Von Shortlist entfernen" : "Zur Shortlist hinzufügen"}">${state.shortlist.has(agency.id) ? "★" : "☆"}</button>
     </div>
     <h3>${html(agency.name)}</h3>
     <p class="domain">${html(agency.domain || "Keine verifizierte Domain")}</p>
@@ -298,7 +298,6 @@ const cardTemplate = (agency) => `
     <p>${html(agency.profile)}</p>
     <div class="card-footer">
       ${agencyLink(agency) ? `<a href="${html(agencyLink(agency))}" target="_blank" rel="noreferrer">Quelle öffnen</a>` : "<span></span>"}
-      <button type="button" data-shortlist="${agency.id}">${shortlistButtonLabel(agency.id)}</button>
     </div>
   </article>
 `;

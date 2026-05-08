@@ -41,6 +41,22 @@ input {
   border-bottom: 1px solid var(--line);
 }
 
+.meta-console {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: 8px 18px;
+  color: var(--muted);
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+}
+
+.meta-console strong {
+  color: var(--ink);
+  font-size: 12px;
+}
+
 .eyebrow {
   margin: 0 0 6px;
   color: var(--blue);
@@ -100,14 +116,14 @@ h2 {
 .app-shell {
   display: grid;
   grid-template-columns: 280px 1fr;
-  min-height: calc(100vh - 104px);
+  min-height: calc(100vh - 33px);
 }
 
 .filters {
   position: sticky;
   top: 0;
   align-self: start;
-  height: calc(100vh - 104px);
+  height: calc(100vh - 33px);
   overflow: auto;
   padding: 22px 18px;
   background: #ffffff;
@@ -182,13 +198,14 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px;
-  height: 20px;
-  padding: 0 6px;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0;
   color: #ffffff;
   background: var(--blue);
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
 }
 
@@ -707,7 +724,30 @@ td.mark {
   color: var(--muted);
   font-size: 12px;
   font-weight: 700;
-  text-align: right;
+  text-align: left;
+}
+
+.star-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0;
+  color: #8a96a7;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.star-button.active {
+  color: #b9821e;
+  background: #fff6df;
+  border-color: #eed18d;
 }
 
 .card-footer a {
@@ -722,6 +762,7 @@ td.mark {
 
 @media (max-width: 980px) {
   .topbar,
+  .meta-console,
   .app-shell {
     display: block;
   }
