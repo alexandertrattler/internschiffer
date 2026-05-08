@@ -23,7 +23,7 @@
       <aside class="filters" aria-label="Filter">
         <label class="search">
           <span>Suche</span>
-          <input id="searchInput" type="search" placeholder="Firma, Ort, Domain, Profil">
+          <input id="searchInput" type="search" placeholder="Firma, Ort, Domain, Profil, Tags">
         </label>
 
         <section>
@@ -32,70 +32,27 @@
         </section>
 
         <section>
-          <h2>Sicherheit</h2>
-          <p class="filter-note">Recherche-Sicherheit: high = Website/Quelle klar bestätigt, medium = plausibel aber mit Einschränkung, low = unsicher oder keine belastbare Domain.</p>
-          <div id="confidenceFilters" class="chip-grid"></div>
-        </section>
-
-        <section>
-          <h2>Region</h2>
-          <div id="regionFilters" class="chip-grid"></div>
+          <h2>Städte</h2>
+          <div id="cityFilters" class="chip-grid"></div>
         </section>
 
         <button id="resetFilters" class="ghost-button" type="button">Filter zurücksetzen</button>
       </aside>
 
       <section class="workspace">
-        <nav class="view-tabs" aria-label="Ansichten">
-          <button class="active" data-view="map" type="button">Map</button>
-          <button data-view="cards" type="button">Cards</button>
-          <button data-view="matrix" type="button">Matrix</button>
-          <button data-view="shortlist" type="button">Shortlist</button>
-        </nav>
-
-        <section id="mapView" class="view active">
-          <div class="map-layout">
-            <article class="map-panel">
-              <div class="map-header">
-                <div>
-                  <h2>Agency Map</h2>
-                  <p>Rote Punkte zeigen Städte/Regionen aus der Recherche. Scrollen zum Zoomen, ziehen zum Navigieren.</p>
-                </div>
-                <div class="map-controls">
-                  <button id="zoomOut" type="button" aria-label="Herauszoomen">-</button>
-                  <button id="resetMap" type="button">Reset</button>
-                  <button id="zoomIn" type="button" aria-label="Hineinzoomen">+</button>
-                </div>
-              </div>
-              <div class="svg-wrap">
-                <svg id="landscapeSvg" viewBox="0 0 980 620" role="img" aria-label="Agency Landscape Map"></svg>
-              </div>
-            </article>
-            <article id="detailPanel" class="detail-panel"></article>
+        <div class="workspace-header">
+          <div>
+            <h2>Cards</h2>
+            <p>Suche und Filter werden kombiniert: Suchbegriffe müssen passen, ausgewählte Fähigkeiten grenzen ein, Städte wirken als Ortsauswahl.</p>
           </div>
-        </section>
+          <button id="copyShortlist" class="ghost-button compact-action" type="button">Shortlist kopieren</button>
+        </div>
 
-        <section id="cardsView" class="view">
-          <div id="cardsGrid" class="cards-grid"></div>
-        </section>
-
-        <section id="matrixView" class="view">
-          <div class="matrix-wrap">
-            <table id="matrixTable"></table>
-          </div>
-        </section>
-
-        <section id="shortlistView" class="view">
-          <div class="shortlist-toolbar">
-            <h2>Shortlist</h2>
-            <button id="copyShortlist" class="ghost-button" type="button">Als Text kopieren</button>
-          </div>
-          <div id="shortlistGrid" class="cards-grid"></div>
-        </section>
+        <p id="emptyState" class="empty-detail" hidden>Keine Agentur passt zu den aktuellen Filtern.</p>
+        <div id="cardsGrid" class="cards-grid"></div>
       </section>
     </main>
 
-    <div id="tooltip" class="tooltip" hidden></div>
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>

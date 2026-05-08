@@ -629,10 +629,78 @@ td.mark {
   margin-bottom: 3px;
 }
 
+/* Current two-column cards layout */
+.app-shell {
+  grid-template-columns: 300px minmax(0, 1fr);
+}
+
+.workspace {
+  padding: 24px 32px 32px;
+}
+
+.workspace-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.workspace-header h2 {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.workspace-header p {
+  max-width: 780px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.compact-action {
+  width: auto;
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.cards-grid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.card {
+  align-content: start;
+  gap: 9px;
+}
+
+.card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.city-line {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.card-footer a {
+  min-height: 34px;
+  padding: 8px 11px;
+  color: var(--ink);
+  background: #f6f8fb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
 @media (max-width: 980px) {
   .topbar,
-  .app-shell,
-  .map-layout {
+  .app-shell {
     display: block;
   }
 
@@ -648,9 +716,13 @@ td.mark {
     border-bottom: 1px solid var(--line);
   }
 
-  .detail-panel {
-    margin-top: 16px;
-    min-height: auto;
+  .workspace-header {
+    display: block;
+  }
+
+  .compact-action {
+    width: 100%;
+    margin-top: 14px;
   }
 }
 
