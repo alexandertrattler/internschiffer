@@ -165,8 +165,11 @@ h2 {
 }
 
 .filters .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   min-height: 26px;
-  padding: 5px 8px;
+  padding: 4px 5px 4px 8px;
   color: #38465a;
   background: #f9fbfd;
   border-color: #dbe3ec;
@@ -175,10 +178,29 @@ h2 {
   font-weight: 650;
 }
 
+.chip-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  color: #ffffff;
+  background: var(--blue);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
 .filters .chip.active {
   color: #ffffff;
   background: var(--blue);
   border-color: var(--blue);
+}
+
+.filters .chip.active .chip-count {
+  color: var(--blue);
+  background: #ffffff;
 }
 
 .filter-note {

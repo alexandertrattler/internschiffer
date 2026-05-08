@@ -56,11 +56,43 @@ const cityDefs = [
   ["unknown", "Ort unklar", [""]]
 ].map(([key, label, aliases]) => ({ key, label, aliases }));
 
+const countryDefs = [
+  ["de", "Deutschland"],
+  ["uk", "UK"],
+  ["nl", "Niederlande"],
+  ["at", "Österreich"],
+  ["ch", "Schweiz"],
+  ["fr", "Frankreich"],
+  ["dk", "Dänemark"],
+  ["it", "Italien"],
+  ["us", "USA"],
+  ["ca", "Kanada"],
+  ["br", "Brasilien"],
+  ["au", "Australien"],
+  ["cn", "China"],
+  ["global", "Global/Remote"],
+  ["unknown", "Unklar"]
+].map(([key, label]) => ({ key, label }));
+
+const cityCountry = {
+  berlin: "de", hamburg: "de", koeln: "de", stuttgart: "de", muenchen: "de",
+  frankfurt: "de", bielefeld: "de", duesseldorf: "de", bremen: "de", osnabrueck: "de",
+  essen: "de", dortmund: "de", hannover: "de", heidelberg: "de", krefeld: "de",
+  erlangen: "de", rheine: "de", potsdam: "de", muenster: "de", dresden: "de",
+  linz: "at", wien: "at", basel: "ch", genf: "ch",
+  amsterdam: "nl", denhaag: "nl", kopenhagen: "dk", london: "uk", glasgow: "uk",
+  lyon: "fr", mailand: "it", toronto: "ca", saopaulo: "br",
+  losangeles: "us", newyork: "us", santafe: "us", lasvegas: "us", denver: "us",
+  grapevine: "us", houston: "us", sydney: "au",
+  global: "global", unknown: "unknown"
+};
+
 const state = {
   agencies: [],
   filtered: [],
   query: "",
   capabilityFilters: new Set(),
+  countryFilters: new Set(),
   cityFilters: new Set(),
   shortlist: new Set(JSON.parse(localStorage.getItem("agencyShortlist") || "[]"))
 };
@@ -68,6 +100,7 @@ const state = {
 const els = {
   searchInput: document.querySelector("#searchInput"),
   capabilityFilters: document.querySelector("#capabilityFilters"),
+  countryFilters: document.querySelector("#countryFilters"),
   cityFilters: document.querySelector("#cityFilters"),
   resetFilters: document.querySelector("#resetFilters"),
   cardsGrid: document.querySelector("#cardsGrid"),
@@ -88,6 +121,7 @@ const normalize = (value) => String(value || "")
   .replaceAll("ü", "ue");
 
 const cityByKey = (key) => cityDefs.find((city) => city.key === key) || cityDefs.at(-1);
+const countryByKey = (key) => countryDefs.find((country) => country.key === key) || countryDefs.at(-1);
 
 const html = (value) => String(value || "").replace(/[&<>"']/g, (char) => ({
   "&": "&amp;",
@@ -114,11 +148,15 @@ const enrichAgency = (agency) => {
     .map(([name]) => name);
   const cityKeys = cityKeysForLocation(agency.location);
   const cities = cityKeys.map((key) => cityByKey(key).label);
+  const countryKeys = [...new Set(cityKeys.map((key) => cityCountry[key] || "unknown"))];
+  const countries = countryKeys.map((key) => countryByKey(key).label);
   return {
     ...agency,
     capabilities,
     cityKeys,
-    cities
+    cities,
+    countryKeys,
+    countries
   };
 };
 
@@ -131,7 +169,9 @@ const makeChip = (label, count, active, onClick) => {
   const el = document.createElement("button");
   el.className = `chip${active ? " active" : ""}`;
   el.type = "button";
-  el.textContent = count === undefined ? label : `${label} ${count}`;
+  el.innerHTML = count === undefined
+    ? `<span>${html(label)}</span>`
+    : `<span>${html(label)}</span><span class="chip-count">${count}</span>`;
   el.addEventListener("click", onClick);
   return el;
 };
@@ -144,8 +184,35 @@ const countBy = (items, getKeys) => {
   return counts;
 };
 
+const getSearchTokens = () => normalize(state.query).split(/\s+/).filter(Boolean);
+
+const matchesSearch = (agency, tokens = getSearchTokens()) => {
+  const text = searchableText(agency);
+  return tokens.length === 0 || tokens.every((token) => text.includes(token));
+};
+
+const matchesCapabilityFilters = (agency) => state.capabilityFilters.size === 0 ||
+  [...state.capabilityFilters].every((capability) => agency.capabilities.includes(capability));
+
+const matchesCountryFilters = (agency) => state.countryFilters.size === 0 ||
+  agency.countryKeys.some((key) => state.countryFilters.has(key));
+
+const matchesCityFilters = (agency) => state.cityFilters.size === 0 ||
+  agency.cityKeys.some((key) => state.cityFilters.has(key));
+
+const candidatesForCounts = (skip) => {
+  const tokens = getSearchTokens();
+  return state.agencies.filter((agency) => {
+    if (!matchesSearch(agency, tokens)) return false;
+    if (skip !== "capability" && !matchesCapabilityFilters(agency)) return false;
+    if (skip !== "country" && !matchesCountryFilters(agency)) return false;
+    if (skip !== "city" && !matchesCityFilters(agency)) return false;
+    return true;
+  });
+};
+
 const renderFilters = () => {
-  const capabilityCounts = countBy(state.agencies, (agency) => agency.capabilities);
+  const capabilityCounts = countBy(candidatesForCounts("capability"), (agency) => agency.capabilities);
   els.capabilityFilters.replaceChildren(...capabilityDefs.map(([name]) => makeChip(
     name,
     capabilityCounts.get(name) || 0,
@@ -153,7 +220,18 @@ const renderFilters = () => {
     () => toggleSet(state.capabilityFilters, name)
   )));
 
-  const cityCounts = countBy(state.agencies, (agency) => agency.cityKeys);
+  const countryCounts = countBy(candidatesForCounts("country"), (agency) => agency.countryKeys);
+  const countryChips = [...countryCounts.entries()]
+    .map(([key, count]) => ({ key, count, label: countryByKey(key).label }))
+    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "de"));
+  els.countryFilters.replaceChildren(...countryChips.map((country) => makeChip(
+    country.label,
+    country.count,
+    state.countryFilters.has(country.key),
+    () => toggleSet(state.countryFilters, country.key)
+  )));
+
+  const cityCounts = countBy(candidatesForCounts("city"), (agency) => agency.cityKeys);
   const cityChips = [...cityCounts.entries()]
     .map(([key, count]) => ({ key, count, label: cityByKey(key).label }))
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "de"));
@@ -179,19 +257,17 @@ const searchableText = (agency) => normalize([
   agency.sourceUrl,
   agency.confidence,
   agency.capabilities.join(" "),
+  agency.countries.join(" "),
   agency.cities.join(" ")
 ].join(" "));
 
 const filterAgencies = () => {
-  const tokens = normalize(state.query).split(/\s+/).filter(Boolean);
+  const tokens = getSearchTokens();
   state.filtered = state.agencies.filter((agency) => {
-    const text = searchableText(agency);
-    const matchesSearch = tokens.length === 0 || tokens.every((token) => text.includes(token));
-    const matchesCapabilities = state.capabilityFilters.size === 0 ||
-      [...state.capabilityFilters].every((capability) => agency.capabilities.includes(capability));
-    const matchesCities = state.cityFilters.size === 0 ||
-      agency.cityKeys.some((key) => state.cityFilters.has(key));
-    return matchesSearch && matchesCapabilities && matchesCities;
+    return matchesSearch(agency, tokens) &&
+      matchesCapabilityFilters(agency) &&
+      matchesCountryFilters(agency) &&
+      matchesCityFilters(agency);
   });
 };
 
@@ -214,7 +290,7 @@ const cardTemplate = (agency) => `
   <article class="card">
     <div class="card-topline">
       <span class="confidence ${html(agency.confidence)}">${html(agency.confidence)}</span>
-      <span class="city-line">${html(agency.cities.join(", "))}</span>
+      <span class="city-line">${html(agency.countries.join(", "))} · ${html(agency.cities.join(", "))}</span>
     </div>
     <h3>${html(agency.name)}</h3>
     <p class="domain">${html(agency.domain || "Keine verifizierte Domain")}</p>
@@ -278,6 +354,7 @@ const init = () => {
   els.resetFilters.addEventListener("click", () => {
     state.query = "";
     state.capabilityFilters.clear();
+    state.countryFilters.clear();
     state.cityFilters.clear();
     els.searchInput.value = "";
     update();
