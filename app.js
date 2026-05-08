@@ -309,7 +309,7 @@ const cardTemplate = (agency) => `
     <div class="tags">${agency.capabilities.slice(0, 6).map((tag) => `<span class="tag">${html(tag)}</span>`).join("")}</div>
     <p>${html(agency.profile)}</p>
     <div class="card-footer">
-      ${agencyLink(agency) ? `<a href="${html(agencyLink(agency))}" target="_blank" rel="noreferrer">Quelle öffnen</a>` : "<span></span>"}
+      ${agencyLink(agency) ? `<a href="${html(agencyLink(agency))}" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>` : "<span></span>"}
     </div>
   </article>
 `;

@@ -26,15 +26,7 @@
         </section>
 
         <section>
-          <h2>Shortlist</h2>
-          <button id="shortlistFilter" class="chip shortlist-filter" type="button">
-            <span>Nur Shortlist</span><span id="shortlistFilterCount" class="chip-count">0</span>
-          </button>
-        </section>
-
-        <section>
           <h2>Städte</h2>
-          <p class="filter-note">Städte werden durch die gewählten Länder und die Suche mit eingeschränkt.</p>
           <div id="cityFilters" class="chip-grid"></div>
         </section>
 
@@ -48,7 +40,10 @@
       <div id="filterResizeHandle" class="resize-handle" aria-hidden="true"></div>
 
       <section class="workspace">
-        <div class="workspace-header">
+        <div class="cards-toolbar">
+          <button id="shortlistFilter" class="chip shortlist-filter" type="button">
+            <span>Nur Shortlist</span><span id="shortlistFilterCount" class="chip-count">0</span>
+          </button>
         </div>
 
         <p id="emptyState" class="empty-detail" hidden>Keine Agentur passt zu den aktuellen Filtern.</p>
