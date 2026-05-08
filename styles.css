@@ -742,13 +742,6 @@ td.mark {
   min-width: 0;
 }
 
-.sort-control > span {
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .sort-option {
   min-height: 26px;
   padding: 4px 9px;
@@ -770,6 +763,18 @@ td.mark {
 .sort-option.placeholder {
   color: rgba(255, 255, 255, 0.38);
   cursor: not-allowed;
+}
+
+.sort-option:hover,
+.sort-option:focus {
+  border-color: rgba(124, 121, 255, 0.72);
+  box-shadow: 0 0 0 2px rgba(124, 121, 255, 0.13);
+}
+
+.sort-option.placeholder:hover,
+.sort-option.placeholder:focus {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: none;
 }
 
 .compact-action {
