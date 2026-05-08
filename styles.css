@@ -900,3 +900,130 @@ td.mark {
     padding: 16px;
   }
 }
+
+/* Full dark card-like surface */
+:root {
+  color-scheme: dark;
+  --ink: #ffffff;
+  --muted: rgba(255, 255, 255, 0.62);
+  --line: rgba(255, 255, 255, 0.16);
+  --paper: #111016;
+  --panel: #17161c;
+  --shadow: 0 0 0 1px rgba(124, 121, 255, 0.12), 0 16px 40px rgba(0, 0, 0, 0.26);
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(124, 121, 255, 0.13), transparent 34rem),
+    linear-gradient(145deg, #111016 0%, #17161c 48%, #111016 100%);
+}
+
+.meta-console,
+.filters,
+.workspace {
+  background:
+    linear-gradient(145deg, rgba(124, 121, 255, 0.08), transparent 42%),
+    var(--dark-card);
+}
+
+.meta-console {
+  color: var(--muted);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.meta-console strong,
+.filter-heading,
+.filters h2,
+.meta strong {
+  color: #ffffff;
+}
+
+.filters {
+  border-right-color: rgba(255, 255, 255, 0.13);
+}
+
+.filters::-webkit-scrollbar {
+  width: 8px;
+}
+
+.filters::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.filters::-webkit-scrollbar-thumb {
+  background: rgba(124, 121, 255, 0.55);
+  border-radius: 999px;
+}
+
+.resize-handle {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+}
+
+.search input,
+.ghost-button,
+.chip,
+.filters .chip,
+.cards-toolbar .chip {
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.search input::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.search input:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(124, 121, 255, 0.85);
+  box-shadow: 0 0 0 2px rgba(124, 121, 255, 0.24);
+}
+
+.chip-count {
+  color: #bebcff;
+}
+
+.filters .chip:hover,
+.cards-toolbar .chip:hover,
+.ghost-button:hover,
+.filters .chip:focus,
+.cards-toolbar .chip:focus,
+.ghost-button:focus {
+  border-color: rgba(124, 121, 255, 0.72);
+  box-shadow: 0 0 0 2px rgba(124, 121, 255, 0.13);
+}
+
+.filters .chip.active,
+.cards-toolbar .chip.active,
+.chip.active,
+.view-tabs button.active {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.filters .chip.active .chip-count,
+.cards-toolbar .chip.active .chip-count {
+  color: #ffffff;
+}
+
+.ghost-button {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.empty-detail {
+  color: var(--muted);
+}
+
+.card {
+  background:
+    linear-gradient(145deg, rgba(124, 121, 255, 0.16), transparent 48%),
+    #17161c;
+}
+
+@media (max-width: 980px) {
+  .filters {
+    border-bottom-color: rgba(255, 255, 255, 0.13);
+  }
+}
