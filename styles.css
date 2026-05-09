@@ -575,12 +575,27 @@ svg {
 }
 
 .tag {
+  appearance: none;
+  border: 1px solid transparent;
+  cursor: pointer;
   padding: 5px 8px;
   color: #244054;
   background: #eaf2f8;
   border-radius: 999px;
   font-size: 12px;
   font-weight: 700;
+}
+
+.tag:hover,
+.tag:focus {
+  border-color: rgba(124, 121, 255, 0.72);
+  box-shadow: 0 0 0 2px rgba(124, 121, 255, 0.13);
+}
+
+.tag.active {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .meta {
@@ -896,6 +911,19 @@ td.mark {
   color: rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card .tag:hover,
+.card .tag:focus {
+  color: #ffffff;
+  border-color: rgba(124, 121, 255, 0.72);
+  box-shadow: 0 0 0 2px rgba(124, 121, 255, 0.13);
+}
+
+.card .tag.active {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .cards-toolbar .chip {

@@ -314,7 +314,7 @@ const cardTemplate = (agency) => `
     </div>
     <h3>${html(agency.name)}</h3>
     <p class="domain">${html(agency.domain || "Keine verifizierte Domain")}</p>
-    <div class="tags">${agency.capabilities.slice(0, 6).map((tag) => `<span class="tag">${html(tag)}</span>`).join("")}</div>
+    <div class="tags">${agency.capabilities.slice(0, 6).map((tag) => `<button class="tag ${state.capabilityFilters.has(tag) ? "active" : ""}" type="button" data-capability="${html(tag)}" aria-pressed="${state.capabilityFilters.has(tag)}">${html(tag)}</button>`).join("")}</div>
     <p>${html(agency.profile)}</p>
     <div class="card-footer">
       ${agencyLink(agency) ? `<a href="${html(agencyLink(agency))}" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>` : "<span></span>"}
@@ -327,6 +327,9 @@ const renderCards = () => {
   els.emptyState.hidden = state.filtered.length !== 0;
   els.cardsGrid.querySelectorAll("[data-shortlist]").forEach((buttonEl) => {
     buttonEl.addEventListener("click", () => toggleShortlist(Number(buttonEl.dataset.shortlist)));
+  });
+  els.cardsGrid.querySelectorAll("[data-capability]").forEach((buttonEl) => {
+    buttonEl.addEventListener("click", () => toggleSet(state.capabilityFilters, buttonEl.dataset.capability));
   });
 };
 
