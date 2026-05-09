@@ -32,12 +32,12 @@
   {
     "id": 4,
     "name": "Pfadfinderei",
-    "providedUrl": "ttps://pfadfinderei.com / http://pfadfinderei.com/",
+    "providedUrl": "http://pfadfinderei.com/",
     "domain": "pfadfinderei.com",
     "location": "Berlin, Deutschland",
     "profile": "Pfadfinderei war ein Berliner Art-Direction- und Designkollektiv mit Schwerpunkt auf Visualisierung von Musik, Motion Design, Bühnenbildern und Medieninstallationen. Sekundärquellen und LinkedIn deuten darauf hin, dass das Kollektiv 2020 getrennte Wege ging.",
     "confidence": "medium",
-    "sourceUrl": "https://www.audiovisualcity.org/2020/04/14/pfadfinderei/"
+    "sourceUrl": "http://pfadfinderei.com/"
   },
   {
     "id": 5,
@@ -92,12 +92,12 @@
   {
     "id": 10,
     "name": "Studio Frames",
-    "providedUrl": "https://studioframes.de",
-    "domain": "studioframes.de",
+    "providedUrl": "Missing",
+    "domain": "Missing",
     "location": "",
-    "profile": "Die angegebene Domain konnte in der Webprüfung nicht belastbar mit einem abrufbaren Firmenprofil verifiziert werden. Es liegen keine ausreichend sicheren Informationen zu Standort oder Leistungsprofil vor.",
+    "profile": "Missing: Die angegebene Domain studioframes.de konnte in der Webprüfung nicht aufgelöst werden; es ließ sich keine belastbar passende Firmenwebsite verifizieren.",
     "confidence": "low",
-    "sourceUrl": "https://studioframes.de"
+    "sourceUrl": ""
   },
   {
     "id": 11,
@@ -317,7 +317,7 @@
     "location": "Hamburg, Deutschland",
     "profile": "747 Studios ist ein Studio für Fotografie, Film, CGI, VR/360 Grad und AR für Marken. Das Studio wurde 2002 gegründet und ist in Hamburg ansässig.",
     "confidence": "high",
-    "sourceUrl": "https://www.behance.net/747Studios?locale=de_DE"
+    "sourceUrl": "https://www.747studios.de/"
   },
   {
     "id": 33,
@@ -477,7 +477,7 @@
     "location": "Glasgow, Vereinigtes Königreich",
     "profile": "ISO Design ist ein Content-Design- und Entwicklungsstudio für digitale Medien, interaktive Software und immersive Installationen. Das Studio arbeitet besonders für Kulturprojekte, Museen, öffentliche und kommerzielle Auftraggeber.",
     "confidence": "high",
-    "sourceUrl": "https://museum-id.com/iso/"
+    "sourceUrl": "https://isodesign.co.uk/"
   },
   {
     "id": 49,
@@ -737,7 +737,7 @@
     "location": "Köln, Deutschland",
     "profile": "Meiré und Meiré ist eine unabhängige Designagentur und kreative Beratung aus Köln. Die Agentur arbeitet interdisziplinär in Branding, Editorial, Kommunikation, Retail, Ausstellungen und digital-analogen Markenstrategien.",
     "confidence": "medium",
-    "sourceUrl": "https://www.designbusiness.cc/location/cologne/"
+    "sourceUrl": "https://meireundmeire.com/"
   },
   {
     "id": 75,
@@ -812,12 +812,12 @@
   {
     "id": 82,
     "name": "FMP.studio",
-    "providedUrl": "https://fmp.studio/",
-    "domain": "fmp.studio",
+    "providedUrl": "Missing",
+    "domain": "Missing",
     "location": "Heidelberg, Deutschland",
-    "profile": "FMP.studio ist ein Heidelberger Studio für interaktive Medieninstallationen, 3D-Animation, VR/AR, Datenvisualisierung, Video-Produktion und technische Realisierung. Das Team entwickelt Erlebniswelten für Messe, Event, Foyer und Showroom.",
-    "confidence": "high",
-    "sourceUrl": "https://fmp.studio/"
+    "profile": "Missing: Die angegebene Website fmp.studio liefert direkt nur Fehlerseiten beziehungsweise keinen abrufbaren Webauftritt; es ließ sich keine aktuell erreichbare Firmenwebsite verifizieren.",
+    "confidence": "low",
+    "sourceUrl": ""
   },
   {
     "id": 83,
@@ -947,7 +947,7 @@
     "location": "Den Haag, Niederlande",
     "profile": "YONK ist ein 3D-Animationsstudio, das mit VR-Sculpting auffällige, verspielte und experimentelle Animationen und Character Designs erstellt. Das Studio wurde von Niels van der Donk und Victoria Young gegründet und arbeitet unter anderem für Marken wie Google, Nike und Meta.",
     "confidence": "medium",
-    "sourceUrl": "https://conference.pictoplasma.com/2023/yonk/"
+    "sourceUrl": "https://www.yonk.online/"
   },
   {
     "id": 96,
