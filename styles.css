@@ -905,7 +905,7 @@ td.mark {
   grid-column: 1 / -1;
   min-height: min(78vh, 775px);
   padding: 22px;
-  scroll-margin-top: 22px;
+  scroll-margin-top: 78px;
   background: #111016;
 }
 

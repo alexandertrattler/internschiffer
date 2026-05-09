@@ -319,7 +319,11 @@ const toggleInfo = (id) => {
   update();
   if (!state.expandedAgencyId) return;
   requestAnimationFrame(() => {
-    document.querySelector(`[data-agency-id="${state.expandedAgencyId}"]`)?.scrollIntoView({
+    const expandedCard = document.querySelector(`[data-agency-id="${state.expandedAgencyId}"]`);
+    if (!expandedCard) return;
+    const searchTop = Math.max(0, Math.round(els.searchInput.getBoundingClientRect().top));
+    expandedCard.style.scrollMarginTop = `${searchTop}px`;
+    expandedCard.scrollIntoView({
       block: "start",
       behavior: "smooth"
     });
