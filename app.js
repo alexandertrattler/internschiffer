@@ -402,7 +402,9 @@ const init = () => {
     state.countryFilters.clear();
     state.cityFilters.clear();
     state.shortlistOnly = false;
+    state.shortlist.clear();
     els.searchInput.value = "";
+    saveShortlist();
     update();
   });
   els.shortlistFilter.addEventListener("click", toggleShortlistFilter);
