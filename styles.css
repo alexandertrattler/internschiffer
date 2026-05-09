@@ -996,7 +996,7 @@ td.mark {
   text-decoration: none;
 }
 
-.info-button {
+.card .info-button {
   display: inline-flex;
   align-items: center;
   width: auto;
@@ -1012,9 +1012,9 @@ td.mark {
   line-height: 1.15;
 }
 
-.info-button:hover,
-.info-button:focus,
-.info-button.active {
+.card .info-button:hover,
+.card .info-button:focus,
+.card .info-button.active {
   color: #ffffff;
   border-color: rgba(124, 121, 255, 0.72);
   box-shadow: 0 0 0 2px rgba(124, 121, 255, 0.13);

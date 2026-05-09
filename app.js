@@ -194,6 +194,7 @@ const countBy = (items, getKeys) => {
 const alphaSort = (a, b) => a.label.localeCompare(b.label, "de", { sensitivity: "base" });
 
 const getSearchTokens = () => normalize(state.query).split(/\s+/).filter(Boolean);
+const isMissingValue = (value) => normalize(value) === "missing";
 
 const matchesSearch = (agency, tokens = getSearchTokens()) => {
   const text = searchableText(agency);
@@ -298,8 +299,8 @@ const sortAgencies = () => {
 };
 
 const agencyLink = (agency) => {
-  if (agency.sourceUrl) return agency.sourceUrl;
-  if (agency.domain) return `https://${agency.domain.split(";")[0].trim()}`;
+  if (agency.sourceUrl && !isMissingValue(agency.sourceUrl)) return agency.sourceUrl;
+  if (agency.domain && !isMissingValue(agency.domain)) return `https://${agency.domain.split(";")[0].trim()}`;
   return "";
 };
 
@@ -316,10 +317,17 @@ const toggleShortlist = (id) => {
 const toggleInfo = (id) => {
   state.expandedAgencyId = state.expandedAgencyId === id ? null : id;
   update();
+  if (!state.expandedAgencyId) return;
+  requestAnimationFrame(() => {
+    document.querySelector(`[data-agency-id="${state.expandedAgencyId}"]`)?.scrollIntoView({
+      block: "start",
+      behavior: "smooth"
+    });
+  });
 };
 
 const cardTemplate = (agency) => `
-  <article class="card ${state.expandedAgencyId === agency.id ? "expanded" : ""}">
+  <article class="card ${state.expandedAgencyId === agency.id ? "expanded" : ""}" data-agency-id="${agency.id}">
     ${state.expandedAgencyId === agency.id && agencyLink(agency) ? `
       <div class="site-preview" aria-hidden="true">
         <iframe src="${html(agencyLink(agency))}" title="" loading="lazy" referrerpolicy="no-referrer"></iframe>
