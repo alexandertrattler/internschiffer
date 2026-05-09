@@ -839,7 +839,9 @@ td.mark {
 }
 
 .reset-option {
-  color: rgba(255, 255, 255, 0.72);
+  color: #ffffff;
+  background: rgba(124, 121, 255, 0.16);
+  border-color: rgba(124, 121, 255, 0.5);
 }
 
 .sort-option.active {
