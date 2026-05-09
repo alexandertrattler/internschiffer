@@ -325,12 +325,6 @@ const cardTemplate = (agency) => `
 const renderCards = () => {
   els.cardsGrid.innerHTML = state.filtered.map(cardTemplate).join("");
   els.emptyState.hidden = state.filtered.length !== 0;
-  els.cardsGrid.querySelectorAll("[data-shortlist]").forEach((buttonEl) => {
-    buttonEl.addEventListener("click", () => toggleShortlist(Number(buttonEl.dataset.shortlist)));
-  });
-  els.cardsGrid.querySelectorAll("[data-capability]").forEach((buttonEl) => {
-    buttonEl.addEventListener("click", () => toggleSet(state.capabilityFilters, buttonEl.dataset.capability));
-  });
 };
 
 const toggleShortlistFilter = () => {
@@ -392,6 +386,18 @@ const init = () => {
     update();
   });
   els.shortlistFilter.addEventListener("click", toggleShortlistFilter);
+  els.cardsGrid.addEventListener("click", (event) => {
+    const shortlistButton = event.target.closest("[data-shortlist]");
+    if (shortlistButton) {
+      toggleShortlist(Number(shortlistButton.dataset.shortlist));
+      return;
+    }
+
+    const capabilityButton = event.target.closest("[data-capability]");
+    if (capabilityButton) {
+      toggleSet(state.capabilityFilters, capabilityButton.dataset.capability);
+    }
+  });
   els.sortOptions.forEach((buttonEl) => {
     buttonEl.addEventListener("click", () => {
       state.sortMode = buttonEl.dataset.sort;
