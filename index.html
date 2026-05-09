@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agency Landscape</title>
-    <link rel="stylesheet" href="styles.css?v=release-glow-1">
+    <link rel="stylesheet" href="styles.css?v=reset-toolbar-1">
   </head>
   <body>
     <header class="meta-console" aria-label="Kennzahlen">
@@ -37,14 +37,13 @@
           <h2>Länder</h2>
           <div id="countryFilters" class="chip-grid"></div>
         </section>
-
-        <button id="resetFilters" class="ghost-button" type="button">Filter zurücksetzen</button>
       </aside>
       <div id="filterResizeHandle" class="resize-handle" aria-hidden="true"></div>
 
       <section class="workspace">
         <div class="cards-toolbar">
           <div class="sort-control" aria-label="Sortierung">
+            <button id="resetFilters" class="sort-option reset-option" type="button">Filter zurücksetzen</button>
             <button class="sort-option active" type="button" data-sort="name">A-Z</button>
             <button class="sort-option placeholder" type="button" disabled>Kategorie 1</button>
             <button class="sort-option placeholder" type="button" disabled>Kategorie 2</button>
@@ -59,7 +58,7 @@
       </section>
     </main>
 
-    <script src="data.js?v=release-glow-1"></script>
-    <script src="app.js?v=release-glow-1"></script>
+    <script src="data.js?v=reset-toolbar-1"></script>
+    <script src="app.js?v=reset-toolbar-1"></script>
   </body>
 </html>

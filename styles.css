@@ -838,6 +838,10 @@ td.mark {
   font-weight: 700;
 }
 
+.reset-option {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .sort-option.active {
   color: #ffffff;
   background: var(--accent);
