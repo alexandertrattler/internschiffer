@@ -190,6 +190,8 @@ const countBy = (items, getKeys) => {
   return counts;
 };
 
+const alphaSort = (a, b) => a.label.localeCompare(b.label, "de", { sensitivity: "base" });
+
 const getSearchTokens = () => normalize(state.query).split(/\s+/).filter(Boolean);
 
 const matchesSearch = (agency, tokens = getSearchTokens()) => {
@@ -222,17 +224,21 @@ const candidatesForCounts = (skip) => {
 
 const renderFilters = () => {
   const capabilityCounts = countBy(candidatesForCounts("capability"), (agency) => agency.capabilities);
-  els.capabilityFilters.replaceChildren(...capabilityDefs.map(([name]) => makeChip(
-    name,
-    capabilityCounts.get(name) || 0,
-    state.capabilityFilters.has(name),
-    () => toggleSet(state.capabilityFilters, name)
+  const capabilityChips = capabilityDefs
+    .map(([name]) => ({ label: name, count: capabilityCounts.get(name) || 0 }))
+    .sort(alphaSort);
+  els.capabilityFilters.replaceChildren(...capabilityChips.map((capability) => makeChip(
+    capability.label,
+    capability.count,
+    state.capabilityFilters.has(capability.label),
+    () => toggleSet(state.capabilityFilters, capability.label)
   )));
 
   const countryCounts = countBy(candidatesForCounts("country"), (agency) => agency.countryKeys);
   const countryChips = countryDefs
     .map((country) => ({ ...country, count: countryCounts.get(country.key) || 0 }))
-    .filter((country) => country.count > 0 || state.countryFilters.has(country.key));
+    .filter((country) => country.count > 0 || state.countryFilters.has(country.key))
+    .sort(alphaSort);
   els.countryFilters.replaceChildren(...countryChips.map((country) => makeChip(
     country.label,
     country.count,
@@ -243,7 +249,7 @@ const renderFilters = () => {
   const cityCounts = countBy(candidatesForCounts("city"), (agency) => agency.cityKeys);
   const cityChips = [...cityCounts.entries()]
     .map(([key, count]) => ({ key, count, label: cityByKey(key).label }))
-    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "de"));
+    .sort(alphaSort);
   els.cityFilters.replaceChildren(...cityChips.map((city) => makeChip(
     city.label,
     city.count,
