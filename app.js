@@ -95,6 +95,7 @@ const state = {
   countryFilters: new Set(),
   cityFilters: new Set(),
   sortMode: "name",
+  expandedAgencyId: null,
   shortlistOnly: false,
   shortlist: new Set(JSON.parse(localStorage.getItem("agencyShortlist") || "[]"))
 };
@@ -312,18 +313,32 @@ const toggleShortlist = (id) => {
   update();
 };
 
+const toggleInfo = (id) => {
+  state.expandedAgencyId = state.expandedAgencyId === id ? null : id;
+  update();
+};
+
 const cardTemplate = (agency) => `
-  <article class="card">
-    <div class="card-topline">
-      <span class="city-line">${html(agency.countries.join(", "))} · ${html(agency.cities.join(", "))}</span>
-      <button class="star-button ${state.shortlist.has(agency.id) ? "active" : ""}" type="button" data-shortlist="${agency.id}" aria-label="${state.shortlist.has(agency.id) ? "Von Shortlist entfernen" : "Zur Shortlist hinzufügen"}">${state.shortlist.has(agency.id) ? "★" : "☆"}</button>
-    </div>
-    <h3>${html(agency.name)}</h3>
-    <p class="domain">${html(agency.domain || "Keine verifizierte Domain")}</p>
-    <div class="tags">${agency.capabilities.slice(0, 6).map((tag) => `<button class="tag ${state.capabilityFilters.has(tag) ? "active" : ""}" type="button" data-capability="${html(tag)}" aria-pressed="${state.capabilityFilters.has(tag)}">${html(tag)}</button>`).join("")}</div>
-    <p>${html(agency.profile)}</p>
-    <div class="card-footer">
-      ${agencyLink(agency) ? `<a href="${html(agencyLink(agency))}" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>` : "<span></span>"}
+  <article class="card ${state.expandedAgencyId === agency.id ? "expanded" : ""}">
+    ${state.expandedAgencyId === agency.id && agencyLink(agency) ? `
+      <div class="site-preview" aria-hidden="true">
+        <iframe src="${html(agencyLink(agency))}" title="" loading="lazy" referrerpolicy="no-referrer"></iframe>
+      </div>
+    ` : ""}
+    <div class="card-content">
+      <div class="card-topline">
+        <span class="city-line">${html(agency.countries.join(", "))} · ${html(agency.cities.join(", "))}</span>
+        <button class="star-button ${state.shortlist.has(agency.id) ? "active" : ""}" type="button" data-shortlist="${agency.id}" aria-label="${state.shortlist.has(agency.id) ? "Von Shortlist entfernen" : "Zur Shortlist hinzufügen"}">${state.shortlist.has(agency.id) ? "★" : "☆"}</button>
+      </div>
+      <h3>${html(agency.name)}</h3>
+      <p class="domain">${html(agency.domain || "Keine verifizierte Domain")}</p>
+      <div class="tags">${agency.capabilities.slice(0, 6).map((tag) => `<button class="tag ${state.capabilityFilters.has(tag) ? "active" : ""}" type="button" data-capability="${html(tag)}" aria-pressed="${state.capabilityFilters.has(tag)}">${html(tag)}</button>`).join("")}</div>
+      <p>${html(agency.profile)}</p>
+      <div class="card-footer">
+        <button class="info-button ${state.expandedAgencyId === agency.id ? "active" : ""}" type="button" data-info="${agency.id}">${state.expandedAgencyId === agency.id ? "Schließen" : "Info"}</button>
+        ${agencyLink(agency) ? `<a href="${html(agencyLink(agency))}" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>` : "<span></span>"}
+      </div>
+      ${state.expandedAgencyId === agency.id ? `<p class="preview-note">Live-Vorschau im Hintergrund. Manche Websites blockieren diese Ansicht; in dem Fall bitte Quelle öffnen nutzen.</p>` : ""}
     </div>
   </article>
 `;
@@ -365,7 +380,7 @@ const setupResizableFilters = () => {
 };
 
 const setupReleaseGlow = () => {
-  const glowSelector = ".tag, .chip, .sort-option, .ghost-button, .card-footer a, .star-button";
+  const glowSelector = ".tag, .chip, .sort-option, .ghost-button, .card-footer a, .info-button, .star-button";
   const triggerGlow = (target) => {
     if (!target || target.disabled) return;
     target.classList.remove("release-glow");
@@ -424,6 +439,12 @@ const init = () => {
     const capabilityButton = event.target.closest("[data-capability]");
     if (capabilityButton) {
       toggleSet(state.capabilityFilters, capabilityButton.dataset.capability);
+      return;
+    }
+
+    const infoButton = event.target.closest("[data-info]");
+    if (infoButton) {
+      toggleInfo(Number(infoButton.dataset.info));
     }
   });
   els.sortOptions.forEach((buttonEl) => {
