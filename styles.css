@@ -242,6 +242,59 @@ body.resizing .resize-handle {
   cursor: pointer;
 }
 
+.chip,
+.tag,
+.sort-option,
+.ghost-button,
+.card-footer a,
+.star-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.chip::after,
+.tag::after,
+.sort-option::after,
+.ghost-button::after,
+.card-footer a::after,
+.star-button::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(100deg, rgba(124, 121, 255, 0), rgba(124, 121, 255, 0.62), rgba(255, 255, 255, 0.95), rgba(124, 121, 255, 0.38), rgba(124, 121, 255, 0));
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-42%);
+}
+
+.release-glow::after {
+  animation: releaseGlow 1.5s ease-out forwards;
+}
+
+@keyframes releaseGlow {
+  0% {
+    opacity: 0;
+    transform: translateX(-42%);
+  }
+
+  12% {
+    opacity: 0.95;
+  }
+
+  28% {
+    opacity: 0.62;
+    transform: translateX(16%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(42%);
+  }
+}
+
 .filters .chip {
   display: inline-flex;
   align-items: center;

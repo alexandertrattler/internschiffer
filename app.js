@@ -358,6 +358,26 @@ const setupResizableFilters = () => {
   els.filterResizeHandle.addEventListener("pointercancel", stopResize);
 };
 
+const setupReleaseGlow = () => {
+  const glowSelector = ".tag, .chip, .sort-option, .ghost-button, .card-footer a, .star-button";
+  const triggerGlow = (target) => {
+    if (!target || target.disabled) return;
+    target.classList.remove("release-glow");
+    void target.offsetWidth;
+    target.classList.add("release-glow");
+  };
+
+  document.addEventListener("pointerup", (event) => {
+    triggerGlow(event.target?.closest?.(glowSelector));
+  });
+  document.addEventListener("pointerleave", (event) => {
+    triggerGlow(event.target?.closest?.(glowSelector));
+  }, true);
+  document.addEventListener("animationend", (event) => {
+    if (event.animationName === "releaseGlow") event.target.classList.remove("release-glow");
+  });
+};
+
 const update = () => {
   filterAgencies();
   els.statShown.textContent = state.filtered.length;
@@ -406,6 +426,7 @@ const init = () => {
     });
   });
   setupResizableFilters();
+  setupReleaseGlow();
 };
 
 init();
