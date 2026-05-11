@@ -87,6 +87,11 @@ const cityCountry = {
   global: "global", unknown: "unknown"
 };
 
+const blockedPreviewIds = new Set([
+  5, 7, 11, 22, 23, 26, 28, 30, 31, 33, 36, 38, 39, 45, 46, 51, 52, 56,
+  69, 73, 84, 86, 87, 89, 91, 92, 98
+]);
+
 const state = {
   agencies: [],
   filtered: [],
@@ -351,7 +356,7 @@ const toggleInfo = (id) => {
 const cardTemplate = (agency) => `
   <article class="card ${state.expandedAgencyId === agency.id ? "expanded" : ""}" data-agency-id="${agency.id}">
     ${state.expandedAgencyId === agency.id && agencyLink(agency) ? `
-      <div class="site-preview" data-preview-shell data-preview-image="${html(agencyPreviewImage(agency))}" aria-hidden="true">
+      <div class="site-preview" data-preview-shell data-agency-preview-id="${agency.id}" data-preview-image="${html(agencyPreviewImage(agency))}" aria-hidden="true">
         <iframe src="${html(agencyLink(agency))}" title="" loading="lazy" referrerpolicy="no-referrer" data-live-preview></iframe>
         ${agencyPreviewImage(agency) ? `<img data-src="${html(agencyPreviewImage(agency))}" alt="" loading="lazy" data-preview-fallback>` : ""}
       </div>
@@ -435,30 +440,34 @@ const setupPreviewFallbacks = () => {
   document.querySelectorAll("[data-preview-shell]").forEach((shell) => {
     const iframe = shell.querySelector("[data-live-preview]");
     const fallback = shell.querySelector("[data-preview-fallback]");
-    if (!iframe || !fallback) return;
+    if (!iframe) return;
 
     let settled = false;
-    const startedAt = performance.now();
+    let slowTimer;
     const showFallback = () => {
-      if (settled) return;
+      if (settled || !fallback) return;
       settled = true;
-      if (!fallback.getAttribute("src")) fallback.setAttribute("src", fallback.dataset.src);
-      shell.classList.add("show-fallback");
+      window.clearTimeout(slowTimer);
       iframe.setAttribute("aria-hidden", "true");
+      fallback.addEventListener("load", () => shell.classList.add("show-fallback"), { once: true });
+      if (fallback.complete && fallback.currentSrc) shell.classList.add("show-fallback");
+      if (!fallback.getAttribute("src")) fallback.setAttribute("src", fallback.dataset.src);
     };
     const keepLivePreview = () => {
       if (settled) return;
-      if (performance.now() - startedAt < 700) {
-        window.setTimeout(showFallback, 650);
-        return;
-      }
       settled = true;
+      window.clearTimeout(slowTimer);
       shell.classList.add("show-live");
     };
 
+    if (blockedPreviewIds.has(Number(shell.dataset.agencyPreviewId))) {
+      showFallback();
+      return;
+    }
+
     iframe.addEventListener("load", keepLivePreview, { once: true });
     iframe.addEventListener("error", showFallback, { once: true });
-    window.setTimeout(showFallback, 5200);
+    slowTimer = window.setTimeout(showFallback, 14000);
   });
 };
 
