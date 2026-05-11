@@ -90,6 +90,7 @@ const cityCountry = {
 const state = {
   agencies: [],
   filtered: [],
+  previews: new Map(),
   query: "",
   capabilityFilters: new Set(),
   countryFilters: new Set(),
@@ -304,6 +305,23 @@ const agencyLink = (agency) => {
   return "";
 };
 
+const agencyPreviewImage = (agency) => state.previews.get(agency.id) || "";
+
+const loadPreviewManifest = async () => {
+  try {
+    const response = await fetch("previews/preview-manifest.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const previews = await response.json();
+    state.previews = new Map(
+      previews
+        .filter((preview) => preview.status === "captured" && preview.previewImage)
+        .map((preview) => [Number(preview.id), preview.previewImage])
+    );
+  } catch {
+    state.previews = new Map();
+  }
+};
+
 const shortlistButtonLabel = (id) => state.shortlist.has(id) ? "Entfernen" : "Shortlist";
 
 const toggleShortlist = (id) => {
@@ -333,8 +351,9 @@ const toggleInfo = (id) => {
 const cardTemplate = (agency) => `
   <article class="card ${state.expandedAgencyId === agency.id ? "expanded" : ""}" data-agency-id="${agency.id}">
     ${state.expandedAgencyId === agency.id && agencyLink(agency) ? `
-      <div class="site-preview" aria-hidden="true">
-        <iframe src="${html(agencyLink(agency))}" title="" loading="lazy" referrerpolicy="no-referrer"></iframe>
+      <div class="site-preview" data-preview-shell data-preview-image="${html(agencyPreviewImage(agency))}" aria-hidden="true">
+        <iframe src="${html(agencyLink(agency))}" title="" loading="lazy" referrerpolicy="no-referrer" data-live-preview></iframe>
+        ${agencyPreviewImage(agency) ? `<img data-src="${html(agencyPreviewImage(agency))}" alt="" loading="lazy" data-preview-fallback>` : ""}
       </div>
     ` : ""}
     <div class="card-content">
@@ -350,7 +369,7 @@ const cardTemplate = (agency) => `
         <button class="info-button ${state.expandedAgencyId === agency.id ? "active" : ""}" type="button" data-info="${agency.id}">${state.expandedAgencyId === agency.id ? "Schließen" : "Info"}</button>
         ${agencyLink(agency) ? `<a href="${html(agencyLink(agency))}" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>` : "<span></span>"}
       </div>
-      ${state.expandedAgencyId === agency.id ? `<p class="preview-note">Live-Vorschau im Hintergrund. Manche Websites blockieren diese Ansicht; in dem Fall bitte Quelle öffnen nutzen.</p>` : ""}
+      ${state.expandedAgencyId === agency.id ? `<p class="preview-note">Live-Vorschau im Hintergrund. Wenn die Website iframes blockiert, erscheint automatisch der gespeicherte Screenshot.</p>` : ""}
     </div>
   </article>
 `;
@@ -358,6 +377,7 @@ const cardTemplate = (agency) => `
 const renderCards = () => {
   els.cardsGrid.innerHTML = state.filtered.map(cardTemplate).join("");
   els.emptyState.hidden = state.filtered.length !== 0;
+  setupPreviewFallbacks();
 };
 
 const toggleShortlistFilter = () => {
@@ -411,6 +431,37 @@ const setupReleaseGlow = () => {
   });
 };
 
+const setupPreviewFallbacks = () => {
+  document.querySelectorAll("[data-preview-shell]").forEach((shell) => {
+    const iframe = shell.querySelector("[data-live-preview]");
+    const fallback = shell.querySelector("[data-preview-fallback]");
+    if (!iframe || !fallback) return;
+
+    let settled = false;
+    const startedAt = performance.now();
+    const showFallback = () => {
+      if (settled) return;
+      settled = true;
+      if (!fallback.getAttribute("src")) fallback.setAttribute("src", fallback.dataset.src);
+      shell.classList.add("show-fallback");
+      iframe.setAttribute("aria-hidden", "true");
+    };
+    const keepLivePreview = () => {
+      if (settled) return;
+      if (performance.now() - startedAt < 700) {
+        window.setTimeout(showFallback, 650);
+        return;
+      }
+      settled = true;
+      shell.classList.add("show-live");
+    };
+
+    iframe.addEventListener("load", keepLivePreview, { once: true });
+    iframe.addEventListener("error", showFallback, { once: true });
+    window.setTimeout(showFallback, 5200);
+  });
+};
+
 const update = () => {
   filterAgencies();
   els.statShown.textContent = state.filtered.length;
@@ -418,7 +469,8 @@ const update = () => {
   renderCards();
 };
 
-const init = () => {
+const init = async () => {
+  await loadPreviewManifest();
   state.agencies = (window.AGENCIES || []).map(enrichAgency);
   state.filtered = state.agencies;
   els.statTotal.textContent = state.agencies.length;

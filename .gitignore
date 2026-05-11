@@ -1,3 +1,5 @@
 node_modules/
-scripts/capture-previews.mjs
-previews/
+.DS_Store
+scripts/
+previews/.gitkeep
+previews/README.md

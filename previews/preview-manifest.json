@@ -1,0 +1,681 @@
+[
+  {
+    "id": 1,
+    "name": "supaCGI GmbH",
+    "url": "https://supacgi.com/",
+    "previewImage": "previews/001-supacgi-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 2,
+    "name": "TIMERIDE GmbH",
+    "url": "https://timeride.de/koeln/informationen/",
+    "previewImage": "previews/002-timeride-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 3,
+    "name": "Elastique. GmbH",
+    "url": "https://elastique.de/de/about/",
+    "previewImage": "previews/003-elastique-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 4,
+    "name": "Pfadfinderei",
+    "url": "http://pfadfinderei.com/",
+    "previewImage": "previews/004-pfadfinderei-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 5,
+    "name": "ManvsMachine (MVSM)",
+    "url": "https://mvsm.com/",
+    "previewImage": "previews/005-mvsm-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 6,
+    "name": "FutureDeluxe",
+    "url": "https://futuredeluxe.com/",
+    "previewImage": "previews/006-futuredeluxe-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 7,
+    "name": "Tendril",
+    "url": "https://tendril.studio/",
+    "previewImage": "previews/007-tendril-studio.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 8,
+    "name": "FIELD.IO",
+    "url": "https://field.io/",
+    "previewImage": "previews/008-field-io.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 9,
+    "name": "ZEITGUISED GmbH",
+    "url": "https://www.zeitguised.com/legal/",
+    "previewImage": "previews/009-zeitguised-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 11,
+    "name": "CATK / Colors And The Kids",
+    "url": "https://catk.de/studio",
+    "previewImage": "previews/011-catk-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 12,
+    "name": "ACHT GmbH",
+    "url": "https://www.acht.studio/about/",
+    "previewImage": "previews/012-acht-studio.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 13,
+    "name": "Sehsucht",
+    "url": "https://sehsucht.de/about-us/",
+    "previewImage": "previews/013-sehsucht-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 14,
+    "name": "Sucuk und Bratwurst GmbH",
+    "url": "https://sucukundbratwurst.de/",
+    "previewImage": "previews/014-sucukundbratwurst-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 15,
+    "name": "Waltz Binaire",
+    "url": "https://waltzbinaire.com/",
+    "previewImage": "previews/015-waltzbinaire-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 16,
+    "name": "onformative GmbH",
+    "url": "https://onformative.com/studio/?p=about%2F",
+    "previewImage": "previews/016-onformative-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 17,
+    "name": "Universal Everything",
+    "url": "https://www.universaleverything.com/about-us",
+    "previewImage": "previews/017-universaleverything-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 18,
+    "name": "Woodblock",
+    "url": "https://woodblock.tv/",
+    "previewImage": "previews/018-woodblock-tv.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 19,
+    "name": "wirmachenbunt GmbH & Co. KG",
+    "url": "https://wirmachenbunt.de/contact",
+    "previewImage": "previews/019-wirmachenbunt-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 20,
+    "name": "NEEEU Spaces GmbH",
+    "url": "https://neu.io/",
+    "previewImage": "previews/020-neu-io.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 21,
+    "name": "lichtgestalten / Kaiser & Schatz GbR",
+    "url": "https://lichtgestalten.li/de/about/",
+    "previewImage": "previews/021-lichtgestalten-li.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 22,
+    "name": "Styleframe / styleframe GmbH",
+    "url": "https://styleframe.de/studio",
+    "previewImage": "previews/022-styleframe-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 23,
+    "name": "BUCK",
+    "url": "https://www.buck.co/about",
+    "previewImage": "previews/023-buck-co.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 24,
+    "name": "artefakt.mov GmbH",
+    "url": "https://artefakt.mov/about/",
+    "previewImage": "previews/024-artefakt-mov.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 25,
+    "name": "Studio Float GmbH",
+    "url": "https://www.studiofloat.de/studio",
+    "previewImage": "previews/025-studiofloat-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 26,
+    "name": "Infinity Reply",
+    "url": "https://www.reply.com/infinity-reply/de",
+    "previewImage": "previews/026-reply-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 27,
+    "name": "Serviceplan",
+    "url": "https://www.house-of-communication.com/int/en/about-us/the-group.html",
+    "previewImage": "previews/027-house-of-communication-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 28,
+    "name": "Monks",
+    "url": "https://www.monks.com/what-we-do",
+    "previewImage": "previews/028-monks-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 29,
+    "name": "Scope Digital Arts",
+    "url": "https://scope-digital-arts.de/",
+    "previewImage": "previews/029-scope-digital-arts-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 30,
+    "name": "BUCK Amsterdam / BUCK Europe",
+    "url": "https://www.buck.co/about",
+    "previewImage": "previews/030-buck-co.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 31,
+    "name": "Philipp und Keuntje",
+    "url": "https://puk.agency/agentur-philipp-und-keuntje/",
+    "previewImage": "previews/031-puk-agency.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 32,
+    "name": "747 Studios",
+    "url": "https://www.747studios.de/",
+    "previewImage": "previews/032-747studios-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 33,
+    "name": "Harvest Consulting",
+    "url": "https://www.harvestconsulting.de/",
+    "previewImage": "previews/033-harvestconsulting-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 34,
+    "name": "POP. Studios",
+    "url": "https://pop.cool/impressum/",
+    "previewImage": "previews/034-pop-cool.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 35,
+    "name": "Electric Umbrella",
+    "url": "https://www.electric-umbrella.com/",
+    "previewImage": "previews/035-electric-umbrella-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 36,
+    "name": "NHB Video / nhb studios",
+    "url": "https://nhb.de/",
+    "previewImage": "previews/036-nhb-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 37,
+    "name": "INFECTED",
+    "url": "https://infected.digital/about/",
+    "previewImage": "previews/037-infected-digital.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 38,
+    "name": "3DEXCITE",
+    "url": "https://www.3ds.com/products/3dexcite",
+    "previewImage": "previews/038-3ds-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 39,
+    "name": "MACINA digital film",
+    "url": "https://www.macina.com/kontakt",
+    "previewImage": "previews/039-macina-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 40,
+    "name": "bloominages",
+    "url": "https://studiostertz.de/projekte/beat/",
+    "previewImage": "previews/040-bloominages.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 41,
+    "name": "The Scope",
+    "url": "https://thescope.studio/",
+    "previewImage": "previews/041-thescope-studio.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 42,
+    "name": "GROSSE8 - Visuelle Kommunikation GmbH & Co. KG",
+    "url": "https://www.grosse8.de/impressum",
+    "previewImage": "previews/042-grosse8-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 43,
+    "name": "Hergarten | Interactive Environments",
+    "url": "https://hergarten.io/about",
+    "previewImage": "previews/043-hergarten-io.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 44,
+    "name": "STUDIO BRÜLL",
+    "url": "https://studiobruell.de/",
+    "previewImage": "previews/044-studiobruell-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 45,
+    "name": "m box bewegtbild GmbH",
+    "url": "https://www.m-box.de/about/",
+    "previewImage": "previews/045-m-box-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 46,
+    "name": "flora&faunavisions",
+    "url": "https://www.florafaunavisions.de/",
+    "previewImage": "previews/046-florafaunavisions-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 47,
+    "name": "The HEG.digital",
+    "url": "https://the-heg.digital/",
+    "previewImage": "previews/047-the-heg-digital.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 48,
+    "name": "ISO Design",
+    "url": "https://isodesign.co.uk/",
+    "previewImage": "previews/048-isodesign-co-uk.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 49,
+    "name": "ART+COM Studios",
+    "url": "https://artcom.de/en/about/",
+    "previewImage": "previews/049-artcom-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 50,
+    "name": "Milla & Partner",
+    "url": "https://www.milla.de/",
+    "previewImage": "previews/050-milla-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 51,
+    "name": "TRIAD Berlin Projektgesellschaft mbH",
+    "url": "https://www.creative-city-berlin.de/de/network/member/triad_berlin_projektgesellschaft_mbh-2/",
+    "previewImage": "previews/051-triad-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 52,
+    "name": "jangled nerves",
+    "url": "https://janglednerves.com/en",
+    "previewImage": "previews/052-janglednerves-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 53,
+    "name": "dan pearlman",
+    "url": "https://danpearlman.com/",
+    "previewImage": "previews/053-danpearlman-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 54,
+    "name": "Studio IT'S ABOUT",
+    "url": "https://itsabout.de/",
+    "previewImage": "previews/054-itsabout-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 55,
+    "name": "molitor Berlin",
+    "url": "https://molitor-berlin.de/en/about-us/",
+    "previewImage": "previews/055-molitor-berlin-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 56,
+    "name": "MUTABOR",
+    "url": "https://www.mutabor.de/en/about/",
+    "previewImage": "previews/056-mutabor-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 57,
+    "name": "Tamschick Media + Space",
+    "url": "https://www.tamschick.com/",
+    "previewImage": "previews/057-tamschick-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 58,
+    "name": "Franke | Steinert",
+    "url": "https://www.franke-steinert.de/leistungen/",
+    "previewImage": "previews/058-franke-steinert-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 59,
+    "name": "iart",
+    "url": "https://iart.ch/about",
+    "previewImage": "previews/059-iart-ch.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 60,
+    "name": "MONOMANGO",
+    "url": "https://monomango.de/about/",
+    "previewImage": "previews/060-monomango-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 61,
+    "name": "URBANSCREEN",
+    "url": "https://www.urbanscreen.com/de/about/",
+    "previewImage": "previews/061-urbanscreen-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 62,
+    "name": "Adrien M + Claire B",
+    "url": "https://www.am-cb.net/en/a-propos",
+    "previewImage": "previews/062-am-cb-net.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 63,
+    "name": "United Visual Artists",
+    "url": "https://www.uva.co.uk/about",
+    "previewImage": "previews/063-uva-co-uk.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 64,
+    "name": "WARPED TYPE",
+    "url": "https://warpedtype.com/interactive-art/",
+    "previewImage": "previews/064-warpedtype-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 65,
+    "name": "Nathow & Geppert / NG Gestaltung",
+    "url": "https://ng-gestaltung.de/info-kontakt/",
+    "previewImage": "previews/065-ng-gestaltung-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 66,
+    "name": "BADABOOMBERLIN",
+    "url": "https://badaboom.berlin/",
+    "previewImage": "previews/066-badaboom-berlin.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 67,
+    "name": "SIGMASIX",
+    "url": "https://www.sigmasix.ch/",
+    "previewImage": "previews/067-sigmasix-ch.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 68,
+    "name": "Studio TISH",
+    "url": "https://maketish.com/about/",
+    "previewImage": "previews/068-maketish-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 69,
+    "name": "HUSH",
+    "url": "https://www.heyhush.com/about",
+    "previewImage": "previews/069-heyhush-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 70,
+    "name": "Wang & Söderström",
+    "url": "https://wangsoderstrom.com/Info/wh331-0f-1-f3",
+    "previewImage": "previews/070-wangsoderstrom-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 71,
+    "name": "foam Studio / ZEITGUISED",
+    "url": "https://www.zeitguised.com/",
+    "previewImage": "previews/071-foam-studio-zeitguised-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 72,
+    "name": "Glue Society",
+    "url": "https://gluesociety.com/about/",
+    "previewImage": "previews/072-gluesociety-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 73,
+    "name": "dreiform",
+    "url": "https://www.dreiform.de/en/",
+    "previewImage": "previews/073-dreiform-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 74,
+    "name": "Meiré und Meiré",
+    "url": "https://meireundmeire.com/",
+    "previewImage": "previews/074-meireundmeire-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 75,
+    "name": "hartmannvonsiebenthal",
+    "url": "https://www.hartmannvonsiebenthal.de/",
+    "previewImage": "previews/075-hartmannvonsiebenthal-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 76,
+    "name": "PlusOne Amsterdam",
+    "url": "https://plusoneamsterdam.com/about",
+    "previewImage": "previews/076-plusoneamsterdam-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 77,
+    "name": "Space Interactive",
+    "url": "https://www.spaceinteractive.de/uber-uns/",
+    "previewImage": "previews/077-spaceinteractive-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 78,
+    "name": "mischer'traxler studio",
+    "url": "https://mischertraxler.com/",
+    "previewImage": "previews/078-mischertraxler-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 79,
+    "name": "y=f(x)",
+    "url": "https://www.yfxlab.com/about",
+    "previewImage": "previews/079-yfxlab-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 80,
+    "name": "Framefield",
+    "url": "https://www.framefield.com/",
+    "previewImage": "previews/080-framefield-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 81,
+    "name": "Futura Epsis 1",
+    "url": "https://www.futura-epsis1.com/about/",
+    "previewImage": "previews/081-futura-epsis1-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 83,
+    "name": "RE:SORB MEDIA",
+    "url": "https://resorb.tv/contact/",
+    "previewImage": "previews/083-resorb-tv.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 84,
+    "name": "Meow Wolf",
+    "url": "https://meowwolf.com/about",
+    "previewImage": "previews/084-meowwolf-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 85,
+    "name": "Xenorama",
+    "url": "https://xenorama.com/about/",
+    "previewImage": "previews/085-xenorama-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 86,
+    "name": "SCENS Motion / LYNIQ STUDIO",
+    "url": "https://www.scens-motion.de/impressum",
+    "previewImage": "previews/086-scens-motion-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 87,
+    "name": "Museum Folkwang",
+    "url": "https://www.museum-folkwang.de/",
+    "previewImage": "previews/087-museum-folkwang-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 88,
+    "name": "EMAF - European Media Art Festival",
+    "url": "https://www.emaf.de/kontakt/",
+    "previewImage": "previews/088-emaf-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 89,
+    "name": "HMKV Hartware MedienKunstVerein",
+    "url": "https://www.hmkv.de/",
+    "previewImage": "previews/089-hmkv-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 90,
+    "name": "CREW10 GmbH",
+    "url": "https://www.crew10.de/",
+    "previewImage": "previews/090-crew10-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 91,
+    "name": "Impuls-Design GmbH",
+    "url": "https://www.impuls-design.de/",
+    "previewImage": "previews/091-impuls-design-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 92,
+    "name": "Rocket Creators GmbH",
+    "url": "https://www.rocketcreators.com/ueber-uns",
+    "previewImage": "previews/092-rocketcreators-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 93,
+    "name": "Miiqo Studios",
+    "url": "https://miiqo.com/",
+    "previewImage": "previews/093-miiqo-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 94,
+    "name": "Artificial Rome GmbH",
+    "url": "https://artificialrome.com/about",
+    "previewImage": "previews/094-artificialrome-com.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 95,
+    "name": "YONK",
+    "url": "https://www.yonk.online/",
+    "previewImage": "previews/095-yonk-online.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 96,
+    "name": "Blue Sound GmbH",
+    "url": "https://blue-sound.de/wir-ueber-uns/",
+    "previewImage": "previews/096-blue-sound-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 97,
+    "name": "Provisuell GmbH",
+    "url": "https://provisuell.de/",
+    "previewImage": "previews/097-provisuell-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 98,
+    "name": "Gänsehaut Medien",
+    "url": "https://www.gaensehaut-medien.de/",
+    "previewImage": "previews/098-gaensehaut-medien-de.jpg",
+    "status": "captured"
+  },
+  {
+    "id": 99,
+    "name": "Graphic Group Mensch & Medien GmbH",
+    "url": "https://graphic-group.de/impressum/",
+    "previewImage": "previews/099-graphic-group-de.jpg",
+    "status": "captured"
+  }
+]

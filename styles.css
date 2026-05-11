@@ -939,6 +939,27 @@ td.mark {
   transform-origin: center;
 }
 
+.site-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.7) contrast(0.9) brightness(0.7);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.02);
+  transition: opacity 420ms ease;
+}
+
+.site-preview.show-fallback iframe {
+  opacity: 0;
+}
+
+.site-preview.show-fallback img {
+  opacity: 0.58;
+}
+
 .card:hover,
 .card:focus-within {
   border-color: rgba(124, 121, 255, 0.7);
