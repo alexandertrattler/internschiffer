@@ -47,7 +47,10 @@
             <button class="sort-option active" type="button" data-sort="name">A-Z</button>
             <button class="sort-option placeholder" type="button" disabled>Kategorie 1</button>
             <button class="sort-option placeholder" type="button" disabled>Kategorie 2</button>
+            <button id="uploadDataButton" class="sort-option upload-option" type="button" hidden>Upload</button>
+            <input id="uploadDataInput" type="file" accept=".json,.xlsx,application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden>
           </div>
+          <span id="uploadDataStatus" class="upload-status" aria-live="polite"></span>
           <button id="shortlistFilter" class="chip shortlist-filter" type="button">
             <span>Nur Shortlist</span><span id="shortlistFilterCount" class="chip-count">0</span>
           </button>

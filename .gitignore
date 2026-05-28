@@ -3,3 +3,5 @@ node_modules/
 scripts/
 previews/.gitkeep
 previews/README.md
+backups/
+__pycache__/

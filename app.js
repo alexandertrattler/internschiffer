@@ -92,6 +92,8 @@ const blockedPreviewIds = new Set([
   69, 73, 84, 86, 87, 89, 91, 92, 98
 ]);
 
+const backendUrl = "http://127.0.0.1:8787";
+
 const state = {
   agencies: [],
   filtered: [],
@@ -114,6 +116,9 @@ const els = {
   cityFilters: document.querySelector("#cityFilters"),
   shortlistFilter: document.querySelector("#shortlistFilter"),
   shortlistFilterCount: document.querySelector("#shortlistFilterCount"),
+  uploadDataButton: document.querySelector("#uploadDataButton"),
+  uploadDataInput: document.querySelector("#uploadDataInput"),
+  uploadDataStatus: document.querySelector("#uploadDataStatus"),
   sortOptions: document.querySelectorAll("[data-sort]"),
   filterResizeHandle: document.querySelector("#filterResizeHandle"),
   resetFilters: document.querySelector("#resetFilters"),
@@ -176,6 +181,11 @@ const enrichAgency = (agency) => {
 const saveShortlist = () => {
   localStorage.setItem("agencyShortlist", JSON.stringify([...state.shortlist]));
   els.statShortlist.textContent = state.shortlist.size;
+};
+
+const setUploadStatus = (message, tone = "") => {
+  els.uploadDataStatus.textContent = message;
+  els.uploadDataStatus.dataset.tone = tone;
 };
 
 const makeChip = (label, count, active, onClick) => {
@@ -478,13 +488,54 @@ const update = () => {
   renderCards();
 };
 
-const init = async () => {
-  await loadPreviewManifest();
-  state.agencies = (window.AGENCIES || []).map(enrichAgency);
+const setAgencyData = (agencies) => {
+  state.agencies = agencies.map(enrichAgency);
   state.filtered = state.agencies;
+  state.expandedAgencyId = null;
+  state.shortlist = new Set([...state.shortlist].filter((id) => state.agencies.some((agency) => agency.id === id)));
   els.statTotal.textContent = state.agencies.length;
   saveShortlist();
   update();
+};
+
+const checkUploadBackend = async () => {
+  if (!els.uploadDataButton) return;
+  try {
+    const response = await fetch(`${backendUrl}/api/health`, { cache: "no-store" });
+    if (!response.ok) throw new Error("Backend nicht erreichbar");
+    els.uploadDataButton.hidden = false;
+    setUploadStatus("Backend bereit", "ok");
+  } catch {
+    els.uploadDataButton.hidden = true;
+    setUploadStatus("");
+  }
+};
+
+const uploadAgencyFile = async (file) => {
+  if (!file) return;
+  setUploadStatus("Upload läuft...", "busy");
+  const formData = new FormData();
+  formData.append("file", file);
+
+  try {
+    const response = await fetch(`${backendUrl}/api/upload`, {
+      method: "POST",
+      body: formData
+    });
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.error || "Upload fehlgeschlagen");
+    setAgencyData(payload.agencies);
+    setUploadStatus(`${payload.count} Einträge aktualisiert`, "ok");
+  } catch (error) {
+    setUploadStatus(error.message || "Upload fehlgeschlagen", "error");
+  } finally {
+    els.uploadDataInput.value = "";
+  }
+};
+
+const init = async () => {
+  await loadPreviewManifest();
+  setAgencyData(window.AGENCIES || []);
 
   els.searchInput.addEventListener("input", (event) => {
     state.query = event.target.value;
@@ -501,6 +552,8 @@ const init = async () => {
     saveShortlist();
     update();
   });
+  els.uploadDataButton.addEventListener("click", () => els.uploadDataInput.click());
+  els.uploadDataInput.addEventListener("change", (event) => uploadAgencyFile(event.target.files?.[0]));
   els.shortlistFilter.addEventListener("click", toggleShortlistFilter);
   els.cardsGrid.addEventListener("click", (event) => {
     const shortlistButton = event.target.closest("[data-shortlist]");
@@ -529,6 +582,7 @@ const init = async () => {
   });
   setupResizableFilters();
   setupReleaseGlow();
+  checkUploadBackend();
 };
 
 init();
