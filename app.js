@@ -674,7 +674,52 @@ const setupPreviewFallbacks = () => {
   });
 };
 
+const urlParams = {
+  query: "q",
+  capabilities: "thema",
+  countries: "land",
+  cities: "stadt",
+  ethics: "ethik"
+};
+
+const readStateFromUrl = () => {
+  const params = new URLSearchParams(window.location.search);
+  const list = (name, allowed) => (params.get(name) || "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter((value) => allowed.has(value));
+  const capabilities = new Set(capabilityDefs.map((def) => def.label || def[0]));
+  const countries = new Set(countryDefs.map((def) => def.key));
+  const cities = new Set(cityDefs.map((def) => def.key));
+
+  state.query = params.get(urlParams.query) || "";
+  state.capabilityFilters = new Set(list(urlParams.capabilities, capabilities));
+  state.countryFilters = new Set(list(urlParams.countries, countries));
+  state.cityFilters = new Set(list(urlParams.cities, cities));
+  state.ethicsOnly = params.get(urlParams.ethics) === "1";
+  els.searchInput.value = state.query;
+};
+
+const syncUrlFromState = () => {
+  const params = new URLSearchParams(window.location.search);
+  const setParam = (name, value) => {
+    if (value) params.set(name, value);
+    else params.delete(name);
+  };
+  setParam(urlParams.query, state.query.trim());
+  setParam(urlParams.capabilities, [...state.capabilityFilters].join(","));
+  setParam(urlParams.countries, [...state.countryFilters].join(","));
+  setParam(urlParams.cities, [...state.cityFilters].join(","));
+  setParam(urlParams.ethics, state.ethicsOnly ? "1" : "");
+  const search = params.toString().replace(/%2C/g, ",").replace(/%2F/g, "/");
+  const nextUrl = `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`;
+  if (nextUrl !== `${window.location.pathname}${window.location.search}${window.location.hash}`) {
+    window.history.replaceState(null, "", nextUrl);
+  }
+};
+
 const update = () => {
+  syncUrlFromState();
   filterAgencies();
   els.statShown.textContent = state.filtered.length;
   renderFilters();
@@ -728,6 +773,7 @@ const uploadAgencyFile = async (file) => {
 
 const init = async () => {
   await loadPreviewManifest();
+  readStateFromUrl();
   setAgencyData(window.AGENCIES || []);
 
   els.searchInput.addEventListener("input", (event) => {
