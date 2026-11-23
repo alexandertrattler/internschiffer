@@ -358,7 +358,9 @@ const makeCountryGroup = (country) => {
   toggle.className = "location-toggle";
   toggle.setAttribute("aria-expanded", String(expanded));
   const cityWord = cities.length === 1 ? "Stadt" : "Städte";
-  toggle.textContent = `${cities.length} ${cityWord} ${expanded ? "▴" : "▾"}`;
+  toggle.setAttribute("aria-label", `${cities.length} ${cityWord} in ${country.label} ${expanded ? "zuklappen" : "aufklappen"}`);
+  toggle.title = `${cities.length} ${cityWord}`;
+  toggle.innerHTML = `<svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   toggle.addEventListener("click", () => {
     if (state.expandedCountries.has(country.key)) state.expandedCountries.delete(country.key);
     else state.expandedCountries.add(country.key);
