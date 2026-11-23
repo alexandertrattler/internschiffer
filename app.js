@@ -147,7 +147,6 @@ const state = {
   capabilityFilters: new Set(),
   countryFilters: new Set(),
   cityFilters: new Set(),
-  expandedCountries: new Set(),
   sortMode: "name",
   expandedAgencyId: null,
   ethicsOnly: false,
@@ -336,50 +335,6 @@ const makeChip = (label, count, active, onClick) => {
   return el;
 };
 
-const makeCountryGroup = (country) => {
-  const group = document.createElement("div");
-  group.className = "location-group";
-  const head = document.createElement("div");
-  head.className = "location-group-head";
-  head.append(makeChip(
-    country.label,
-    country.count,
-    state.countryFilters.has(country.key),
-    () => toggleSet(state.countryFilters, country.key)
-  ));
-  const cities = country.cities.filter((city) => city.label !== country.label);
-  group.append(head);
-  if (!cities.length) return group;
-
-  const hasActiveCity = cities.some((city) => state.cityFilters.has(city.key));
-  const expanded = state.expandedCountries.has(country.key) || hasActiveCity;
-  const toggle = document.createElement("button");
-  toggle.type = "button";
-  toggle.className = "location-toggle";
-  toggle.setAttribute("aria-expanded", String(expanded));
-  const cityWord = cities.length === 1 ? "Stadt" : "Städte";
-  toggle.textContent = `${cities.length} ${cityWord} ${expanded ? "▴" : "▾"}`;
-  toggle.addEventListener("click", () => {
-    if (state.expandedCountries.has(country.key)) state.expandedCountries.delete(country.key);
-    else state.expandedCountries.add(country.key);
-    renderFilters();
-  });
-  head.append(toggle);
-
-  if (expanded) {
-    const list = document.createElement("div");
-    list.className = "chip-grid location-cities";
-    list.append(...withFilterSeparators(cities.map((city) => makeChip(
-      city.label,
-      city.count,
-      state.cityFilters.has(city.key),
-      () => toggleSet(state.cityFilters, city.key)
-    ))));
-    group.append(list);
-  }
-  return group;
-};
-
 const makeFilterSeparator = () => {
   const separator = document.createElement("span");
   separator.className = "filter-separator";
@@ -451,25 +406,37 @@ const renderFilters = () => {
     () => toggleSet(state.capabilityFilters, capability.label)
   ))));
 
-  const countryCounts = countBy(candidatesForCounts("country"), (agency) => agency.countryKeys);
   const cityCounts = countBy(candidatesForCounts("city"), (agency) => agency.cityKeys);
-  const citiesByCountry = new Map();
+  const countryTotals = new Map();
   cityCounts.forEach((count, key) => {
     const countryKey = cityCountry[key] || "unknown";
-    if (!citiesByCountry.has(countryKey)) citiesByCountry.set(countryKey, []);
-    citiesByCountry.get(countryKey).push({ key, count, label: cityByKey(key).label });
+    countryTotals.set(countryKey, (countryTotals.get(countryKey) || 0) + count);
   });
   const pinnedLast = new Set(["global", "unknown"]);
-  const countryGroups = countryDefs
-    .map((country) => ({
-      ...country,
-      count: countryCounts.get(country.key) || 0,
-      cities: (citiesByCountry.get(country.key) || []).sort(alphaSort)
-    }))
-    .filter((country) => country.count > 0 || state.countryFilters.has(country.key) ||
-      country.cities.some((city) => state.cityFilters.has(city.key)))
-    .sort((a, b) => (pinnedLast.has(a.key) - pinnedLast.has(b.key)) || (b.count - a.count) || alphaSort(a, b));
-  els.locationFilters.replaceChildren(...countryGroups.map(makeCountryGroup));
+  const locationChips = [...cityCounts.entries()]
+    .map(([key, count]) => {
+      const countryKey = cityCountry[key] || "unknown";
+      const cityLabel = cityByKey(key).label;
+      const countryLabel = countryByKey(countryKey).label;
+      return {
+        key,
+        count,
+        countryKey,
+        countryLabel,
+        cityLabel,
+        label: pinnedLast.has(countryKey) ? cityLabel : `${countryLabel}, ${cityLabel}`
+      };
+    })
+    .sort((a, b) => (pinnedLast.has(a.countryKey) - pinnedLast.has(b.countryKey)) ||
+      ((countryTotals.get(b.countryKey) || 0) - (countryTotals.get(a.countryKey) || 0)) ||
+      a.countryLabel.localeCompare(b.countryLabel, "de", { sensitivity: "base" }) ||
+      a.cityLabel.localeCompare(b.cityLabel, "de", { sensitivity: "base" }));
+  els.locationFilters.replaceChildren(...withFilterSeparators(locationChips.map((city) => makeChip(
+    city.label,
+    city.count,
+    state.cityFilters.has(city.key),
+    () => toggleSet(state.cityFilters, city.key)
+  ))));
 
   els.shortlistFilter.classList.toggle("active", state.shortlistOnly);
   els.ethicsFilter.classList.toggle("active", state.ethicsOnly);
@@ -590,7 +557,7 @@ const toggleShortlistFilter = () => {
 };
 
 const setupResizableFilters = () => {
-  const savedWidth = Number(localStorage.getItem("agencyFilterWidth"));
+  const savedWidth = Number(localStorage.getItem("agencyFilterWidthV2"));
   if (savedWidth) els.appShell.style.setProperty("--filter-width", `${savedWidth}px`);
 
   let startX = 0;
@@ -606,9 +573,9 @@ const setupResizableFilters = () => {
 
   els.filterResizeHandle.addEventListener("pointermove", (event) => {
     if (!document.body.classList.contains("resizing")) return;
-    const width = Math.max(220, Math.min(520, startWidth + event.clientX - startX));
+    const width = Math.max(220, Math.min(680, startWidth + event.clientX - startX));
     els.appShell.style.setProperty("--filter-width", `${width}px`);
-    localStorage.setItem("agencyFilterWidth", String(Math.round(width)));
+    localStorage.setItem("agencyFilterWidthV2", String(Math.round(width)));
   });
 
   els.filterResizeHandle.addEventListener("pointerup", stopResize);
