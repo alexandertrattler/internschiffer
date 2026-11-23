@@ -1802,3 +1802,18 @@ body.resizing .resize-handle {
     background: #111015;
   }
 }
+
+/* Countries flow side by side like the topic chips; an opened country takes its own row */
+.location-groups {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.location-group.expanded {
+  flex-basis: 100%;
+}
+
+.location-group-head {
+  gap: 2px;
+}

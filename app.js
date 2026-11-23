@@ -367,6 +367,7 @@ const makeCountryGroup = (country) => {
   head.append(toggle);
 
   if (expanded) {
+    group.classList.add("expanded");
     const list = document.createElement("div");
     list.className = "chip-grid location-cities";
     list.append(...withFilterSeparators(cities.map((city) => makeChip(
