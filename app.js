@@ -64,6 +64,25 @@ const cityDefs = [
   ["denver", "Denver", ["denver"]],
   ["grapevine", "Grapevine", ["grapevine"]],
   ["houston", "Houston", ["houston"]],
+  ["werther", "Werther", ["werther"]],
+  ["lage", "Lage", ["lage, "]],
+  ["guetersloh", "Gütersloh", ["gütersloh", "guetersloh"]],
+  ["offenbach", "Offenbach am Main", ["offenbach"]],
+  ["aachen", "Aachen", ["aachen"]],
+  ["wiesbaden", "Wiesbaden", ["wiesbaden"]],
+  ["ueberlingen", "Überlingen", ["überlingen", "ueberlingen"]],
+  ["bochum", "Bochum", ["bochum"]],
+  ["mainz", "Mainz", ["mainz"]],
+  ["braunschweig", "Braunschweig", ["braunschweig"]],
+  ["zuerich", "Zürich", ["zürich", "zuerich", "zurich"]],
+  ["stockholm", "Stockholm", ["stockholm"]],
+  ["oslo", "Oslo", ["oslo"]],
+  ["helsinki", "Helsinki", ["helsinki"]],
+  ["rotterdam", "Rotterdam", ["rotterdam"]],
+  ["madrid", "Madrid", ["madrid"]],
+  ["lissabon", "Lissabon", ["lissabon", "lisbon"]],
+  ["sanfrancisco", "San Francisco", ["san francisco"]],
+  ["queenstown", "Queenstown", ["queenstown"]],
   ["global", "Global/Remote", ["global", "remote", "international"]],
   ["unknown", "Ort unklar", [""]]
 ].map(([key, label, aliases]) => ({ key, label, aliases }));
@@ -83,6 +102,11 @@ const countryDefs = [
   ["br", "Brasilien"],
   ["au", "Australien"],
   ["jp", "Japan"],
+  ["se", "Schweden"],
+  ["no", "Norwegen"],
+  ["fi", "Finnland"],
+  ["pt", "Portugal"],
+  ["nz", "Neuseeland"],
   ["cn", "China"],
   ["global", "Global/Remote"],
   ["unknown", "Unklar"]
@@ -101,6 +125,10 @@ const cityCountry = {
   tokyo: "jp",
   losangeles: "us", newyork: "us", santafe: "us", lasvegas: "us", denver: "us",
   grapevine: "us", houston: "us", sydney: "au",
+  werther: "de", lage: "de", guetersloh: "de", offenbach: "de", aachen: "de",
+  wiesbaden: "de", ueberlingen: "de", bochum: "de", mainz: "de", braunschweig: "de",
+  zuerich: "ch", stockholm: "se", oslo: "no", helsinki: "fi", rotterdam: "nl",
+  madrid: "es", lissabon: "pt", sanfrancisco: "us", queenstown: "nz",
   global: "global", unknown: "unknown"
 };
 
