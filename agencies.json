@@ -267,7 +267,10 @@
     "location": "München, Deutschland; international",
     "profile": "Serviceplan Group ist eine unabhängige internationale Agenturgruppe für integrierte Werbung, Marketing, Media, Data, Creative, Content und Technologie. Die Gruppe arbeitet über Houses of Communication und bündelt u.a. Serviceplan, Mediaplus und Plan.Net.",
     "confidence": "high",
-    "sourceUrl": "https://www.house-of-communication.com/int/en/about-us/the-group.html"
+    "sourceUrl": "https://www.house-of-communication.com/int/en/about-us/the-group.html",
+    "categories": [
+      "Praxis: Überregional"
+    ]
   },
   {
     "id": 28,
@@ -307,7 +310,10 @@
     "location": "Hamburg, Berlin, Ingolstadt, Stuttgart, Frankfurt am Main",
     "profile": "Philipp und Keuntje, kurz PUK, ist eine Full-Service-Kreativagentur für Marke, Design, Kommunikation, Social, Web und Bewegtbild. Die Agentur beschreibt ihre Arbeit als Verbindung aus Technologie, Insights, Kreativität und Handwerk.",
     "confidence": "high",
-    "sourceUrl": "https://puk.agency/agentur-philipp-und-keuntje/"
+    "sourceUrl": "https://puk.agency/agentur-philipp-und-keuntje/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
   },
   {
     "id": 32,
@@ -552,12 +558,15 @@
   {
     "id": 56,
     "name": "MUTABOR",
-    "providedUrl": "http://www.mutabor.de/identity-experience",
+    "providedUrl": "https://www.mutabor.de/",
     "domain": "mutabor.de",
     "location": "Hamburg, Deutschland; weitere Standorte u. a. München, Berlin, Los Angeles",
     "profile": "MUTABOR ist eine international arbeitende Markenagentur, die Strategie, Design und Technologie unter dem Ansatz Brand Intelligence verbindet. Die Agentur wurde in Deutschland gegründet und positioniert sich als unabhängiger Partner für Markentransformation.",
     "confidence": "high",
-    "sourceUrl": "https://www.mutabor.de/en/about/"
+    "sourceUrl": "https://www.mutabor.de/en/about/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
   },
   {
     "id": 57,
@@ -642,12 +651,15 @@
   {
     "id": 65,
     "name": "Nathow & Geppert / NG Gestaltung",
-    "providedUrl": "http://www.nggestaltung.de/",
+    "providedUrl": "https://ng-gestaltung.de/",
     "domain": "ng-gestaltung.de",
     "location": "Bielefeld, Deutschland",
     "profile": "Nathow & Geppert sind freie Gestalter aus Bielefeld, die Projekte für Unternehmen, Verlage und Vereine betreuen. Ihre Arbeit verbindet praxisbezogene Gestaltung mit experimentellen und künstlerischen Konzepten.",
     "confidence": "high",
-    "sourceUrl": "https://ng-gestaltung.de/info-kontakt/"
+    "sourceUrl": "https://ng-gestaltung.de/info-kontakt/",
+    "categories": [
+      "Praxis: Regional"
+    ]
   },
   {
     "id": 66,
@@ -737,7 +749,10 @@
     "location": "Köln, Deutschland",
     "profile": "Meiré und Meiré ist eine unabhängige Designagentur und kreative Beratung aus Köln. Die Agentur arbeitet interdisziplinär in Branding, Editorial, Kommunikation, Retail, Ausstellungen und digital-analogen Markenstrategien.",
     "confidence": "medium",
-    "sourceUrl": "https://meireundmeire.com/"
+    "sourceUrl": "https://meireundmeire.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
   },
   {
     "id": 75,
@@ -1102,12 +1117,15 @@
   {
     "id": 111,
     "name": "networker Medienfabrik GmbH",
-    "providedUrl": "networker Medienfabrik GmbH, Bielefeld",
+    "providedUrl": "https://networker.de/",
     "domain": "networker.de",
     "location": "Bielefeld, Deutschland",
     "profile": "networker Medienfabrik ist eine Bielefelder Agentur für Internet, Print und Marketing. Das Leistungsspektrum umfasst Weblösungen, CMS, Corporate Design, Geschäftsausstattung, Informationsmaterialien und Texte.",
     "confidence": "high",
-    "sourceUrl": "https://www.bielefeld.de/node/4568"
+    "sourceUrl": "https://www.bielefeld.de/node/4568",
+    "categories": [
+      "Praxis: Regional"
+    ]
   },
   {
     "id": 112,
@@ -1351,6 +1369,1385 @@
     "confidence": "high",
     "sourceUrl": "https://polarwerk.de/agentur/",
     "categories": [
+      "Ethik/Gendergerechtigkeit"
+    ]
+  },
+  {
+    "id": 132,
+    "name": "beierarbeit",
+    "providedUrl": "https://beierarbeit.de/",
+    "domain": "beierarbeit.de",
+    "location": "Bielefeld, Deutschland",
+    "profile": "beierarbeit ist ein unabhängiges Designstudio für Visual Branding mit Schwerpunkt auf Typografie, Illustration, Grafik- und Motiondesign.",
+    "confidence": "high",
+    "sourceUrl": "https://beierarbeit.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 133,
+    "name": "cyclos design",
+    "providedUrl": "https://www.cyclos-design.de/",
+    "domain": "cyclos-design.de",
+    "location": "Münster und Berlin, Deutschland",
+    "profile": "cyclos design ist eine Kreativ- und Branding-Agentur für Strategie, Branding, Creative Design, Development, Werbung und Marketing.",
+    "confidence": "high",
+    "sourceUrl": "https://www.cyclos-design.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 134,
+    "name": "deteringdesign",
+    "providedUrl": "https://www.deteringdesign.de/",
+    "domain": "deteringdesign.de",
+    "location": "Bielefeld, Deutschland",
+    "profile": "deteringdesign entwickelt ganzheitliche Designlösungen für Print und Online, von der Konzeption bis zur Umsetzung, mit Fokus auf Corporate Design und Markenkommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.deteringdesign.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 135,
+    "name": "HDNET",
+    "providedUrl": "https://www.hdnet.de/",
+    "domain": "hdnet.de",
+    "location": "Werther (Westf.), Deutschland",
+    "profile": "HDNET ist ein Digitalunternehmen für individuelle Software, Prozessdigitalisierung und digitale Plattformen.",
+    "confidence": "high",
+    "sourceUrl": "https://www.hdnet.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 136,
+    "name": "KopfKunst",
+    "providedUrl": "https://www.kopfkunst.net/de/",
+    "domain": "kopfkunst.com",
+    "location": "Münster, Deutschland",
+    "profile": "KopfKunst ist eine inhabergeführte Kreativagentur für Kommunikation, Kampagnen und Markenauftritte für Kunden aus unterschiedlichen Branchen.",
+    "confidence": "high",
+    "sourceUrl": "https://www.kopfkunst.com/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 137,
+    "name": "labor b",
+    "providedUrl": "https://www.laborb.de/",
+    "domain": "laborb.de",
+    "location": "Dortmund, Deutschland",
+    "profile": "labor b ist eine Branding- und Digitalagentur, die Marken, Strategien und digitale Produkte für Institutionen, Unternehmen und Start-ups entwickelt.",
+    "confidence": "high",
+    "sourceUrl": "https://laborb.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 138,
+    "name": "Neue Identität",
+    "providedUrl": "https://www.neueidentitaet.com/",
+    "domain": "neueidentitaet.com",
+    "location": "Bielefeld, Deutschland",
+    "profile": "Neue Identität ist ein Designbüro, das digitale und analoge Identitäten und Corporate Design für Unternehmen, Organisationen und Start-ups gestaltet.",
+    "confidence": "high",
+    "sourceUrl": "https://www.neueidentitaet.com/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 139,
+    "name": "MEDIUM",
+    "providedUrl": "https://www.medium.ag/",
+    "domain": "medium.ag",
+    "location": "Bielefeld, Deutschland",
+    "profile": "MEDIUM ist eine Werbe-, Design- und Digitalagentur für Markenkommunikation, Marketing und Kampagnen, seit 1978.",
+    "confidence": "high",
+    "sourceUrl": "https://www.medium.ag/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 140,
+    "name": "meier stracke",
+    "providedUrl": "https://www.meier-stracke.de/",
+    "domain": "meier-stracke.de",
+    "location": "Bielefeld, Deutschland",
+    "profile": "meier stracke ist ein Büro für Kommunikation und Corporate Design mit Projekten in Editorial, Kampagne und Website.",
+    "confidence": "high",
+    "sourceUrl": "https://www.meier-stracke.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 141,
+    "name": "MEN AT WORK",
+    "providedUrl": "https://www.men-at-work.de/",
+    "domain": "men-at-work.de",
+    "location": "Lage, Deutschland",
+    "profile": "MEN AT WORK ist eine Agentur für strategische Markenberatung, Branding und Design sowie Webentwicklung und digitale Technologie.",
+    "confidence": "high",
+    "sourceUrl": "https://www.men-at-work.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 142,
+    "name": "Studio Paschetag (ehem. büro paschetag)",
+    "providedUrl": "https://bueropaschetag.de/",
+    "domain": "studiopaschetag.de",
+    "location": "Bielefeld, Deutschland",
+    "profile": "Studio Paschetag ist eine Designagentur für Branding, Kommunikation und Gestaltung online und offline.",
+    "confidence": "high",
+    "sourceUrl": "https://studiopaschetag.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 143,
+    "name": "TERRITORY",
+    "providedUrl": "https://territory.de/",
+    "domain": "territory.de",
+    "location": "Gütersloh, Deutschland",
+    "profile": "TERRITORY ist eine Content- und Kommunikationsagentur für Corporate Publishing, Content-Marketing, Kampagnen und Markenkommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://territory.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 144,
+    "name": "tricks",
+    "providedUrl": "https://www.tricks.de/",
+    "domain": "tricks.de",
+    "location": "Bielefeld, Deutschland",
+    "profile": "tricks ist eine Webdesign- und Werbeagentur, die Websites, Marken und Onlineshops konzipiert, gestaltet und entwickelt.",
+    "confidence": "high",
+    "sourceUrl": "https://www.tricks.de/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 145,
+    "name": "u+i interact",
+    "providedUrl": "https://uandi.com/",
+    "domain": "uandi.com",
+    "location": "Bielefeld, Deutschland",
+    "profile": "u+i interact ist eine Full-Service-Digitalagentur für digitale Markenerlebnisse, Websites, Software und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://uandi.com/",
+    "categories": [
+      "Praxis: Regional"
+    ]
+  },
+  {
+    "id": 146,
+    "name": "31M",
+    "providedUrl": "https://31m.de/",
+    "domain": "31m.de",
+    "location": "Essen, Deutschland",
+    "profile": "31M ist eine Design- und Werbeagentur für Corporate Design, Kampagnen, Websites, Onlinemarketing sowie Film und Foto.",
+    "confidence": "high",
+    "sourceUrl": "https://31m.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 147,
+    "name": "Accenture Song",
+    "providedUrl": "https://www.accenture.com/",
+    "domain": "accenture.com",
+    "location": "Hamburg, Deutschland",
+    "profile": "Accenture Song ist die Kreativ- und Marketing-Sparte von Accenture für Marke, Kampagnen, Customer Experience und digitale Produkte. Der Link auf der Praxis-Seite führt auf die allgemeine Accenture-Startseite.",
+    "confidence": "high",
+    "sourceUrl": "https://www.accenture.com/de",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 148,
+    "name": "adlerschmidt",
+    "providedUrl": "http://www.adlerschmidt.de/",
+    "domain": "adlerschmidt.de",
+    "location": "Berlin, Deutschland",
+    "profile": "adlerschmidt ist eine Agentur für Corporate Design und digitale Transformation mit Fokus auf Marke und User Experience in digitalen und analogen Räumen.",
+    "confidence": "high",
+    "sourceUrl": "https://adlerschmidt.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 149,
+    "name": "Arndt Benedikt",
+    "providedUrl": "https://arndt-benedikt.de/",
+    "domain": "arndt-benedikt.de",
+    "location": "Frankfurt am Main, Deutschland",
+    "profile": "Arndt Benedikt ist eine Agentur für designgetriebenes Branding und Corporate Design.",
+    "confidence": "high",
+    "sourceUrl": "https://arndt-benedikt.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 150,
+    "name": "Arndt Teunissen",
+    "providedUrl": "https://www.arndtteunissen.de/",
+    "domain": "arndtteunissen.de",
+    "location": "Düsseldorf, Deutschland",
+    "profile": "Arndt Teunissen ist eine international ausgezeichnete Branding-Agentur für Corporate Identity und Corporate Design.",
+    "confidence": "high",
+    "sourceUrl": "https://www.arndtteunissen.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 151,
+    "name": "BBDO Germany",
+    "providedUrl": "https://bbdo.de/",
+    "domain": "bbdo.de",
+    "location": "Düsseldorf und Berlin, Deutschland",
+    "profile": "BBDO ist ein internationales Agenturnetzwerk für Werbung, Kampagnen, Markenstrategie und Kreation.",
+    "confidence": "high",
+    "sourceUrl": "https://bbdo.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 152,
+    "name": "Blackspace",
+    "providedUrl": "https://www.black.space/",
+    "domain": "black.space",
+    "location": "München, Deutschland",
+    "profile": "Blackspace ist eine Agentur für Branding und digitale Markenkommunikation. Die Website war bei der Prüfung im November 2026 nicht erreichbar.",
+    "confidence": "high",
+    "sourceUrl": "https://www.black.space/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 153,
+    "name": "Bureau Borsche",
+    "providedUrl": "https://bureauborsche.com/",
+    "domain": "bureauborsche.com",
+    "location": "München, Deutschland",
+    "profile": "Bureau Borsche ist ein Studio für Art Direction, Grafikdesign, Branding und Editorial Design für Kultur-, Mode- und Markenkunden.",
+    "confidence": "high",
+    "sourceUrl": "https://bureauborsche.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 154,
+    "name": "Bureau Oberhaeuser",
+    "providedUrl": "https://oberhaeuser.info/",
+    "domain": "oberhaeuser.info",
+    "location": "Offenbach am Main, Deutschland",
+    "profile": "Bureau Oberhaeuser ist ein Designbüro mit Fokus auf Informations- und Interface-Design, Datenvisualisierung und digitale Produkte.",
+    "confidence": "high",
+    "sourceUrl": "https://oberhaeuser.info/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 155,
+    "name": "Büro Schramm für Gestaltung",
+    "providedUrl": "https://www.bueroschramm.de/",
+    "domain": "bueroschramm.de",
+    "location": "Offenbach am Main, Deutschland",
+    "profile": "Büro Schramm ist ein Gestaltungsbüro für Corporate Design, Editorial Design und Kommunikation für Kultur und Unternehmen.",
+    "confidence": "high",
+    "sourceUrl": "https://www.bueroschramm.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 156,
+    "name": "C3 Creative Code and Content",
+    "providedUrl": "https://www.c3.co/",
+    "domain": "c3.co",
+    "location": "Berlin, Deutschland",
+    "profile": "C3 ist eine Content- und Kommunikationsagentur, die Kreation, Content-Produktion und Technologie für Marken verbindet.",
+    "confidence": "high",
+    "sourceUrl": "https://www.c3.co/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 157,
+    "name": "Crolla Lowis",
+    "providedUrl": "https://www.crolla-lowis.de/",
+    "domain": "crolla-lowis.de",
+    "location": "Aachen, Deutschland",
+    "profile": "Crolla Lowis ist eine Branding-Agentur, die nationale und internationale Unternehmen strategisch und kreativ beim Aufbau von Marken begleitet.",
+    "confidence": "high",
+    "sourceUrl": "https://www.crolla-lowis.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 158,
+    "name": "DITHO Design",
+    "providedUrl": "https://www.dithodesign.de/",
+    "domain": "dithodesign.de",
+    "location": "Köln, Deutschland",
+    "profile": "DITHO entwickelt Design und Kommunikation für Organisationen und Unternehmen, von Logoentwicklung und Corporate Design bis zu Publikationen und Websites.",
+    "confidence": "high",
+    "sourceUrl": "https://www.dithodesign.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 159,
+    "name": "DOJO",
+    "providedUrl": "https://www.dojo-berlin.de/",
+    "domain": "dojo-berlin.de",
+    "location": "Berlin, Deutschland",
+    "profile": "DOJO ist eine Werbeagentur für Kampagnen, Markenkommunikation und Kreation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.dojo-berlin.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 160,
+    "name": "DUMBO",
+    "providedUrl": "https://dumbo.design/",
+    "domain": "dumbo.design",
+    "location": "Köln, Deutschland",
+    "profile": "DUMBO ist ein Studio für Digital Product Design, UX und Service Design, das interaktive digitale Produkte und Erlebnisse gestaltet.",
+    "confidence": "high",
+    "sourceUrl": "https://dumbo.design/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 161,
+    "name": "DuMont Buchverlag",
+    "providedUrl": "https://www.dumont-buchverlag.de/",
+    "domain": "dumont-buchverlag.de",
+    "location": "Köln, Deutschland",
+    "profile": "DuMont ist ein Buchverlag für Literatur, Sachbuch und Kunst mit eigener Herstellung und Buchgestaltung.",
+    "confidence": "high",
+    "sourceUrl": "https://www.dumont-buchverlag.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 162,
+    "name": "Edenspiekermann",
+    "providedUrl": "https://www.edenspiekermann.com/",
+    "domain": "edenspiekermann.com",
+    "location": "Berlin, Deutschland",
+    "profile": "Edenspiekermann ist eine internationale, unabhängige Design- und Branding-Beratung für Marke, digitale Produkte und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.edenspiekermann.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 163,
+    "name": "EIGA",
+    "providedUrl": "https://www.eiga.de/",
+    "domain": "eiga.design",
+    "location": "Hamburg, Deutschland",
+    "profile": "EIGA ist ein Studio für strategisches Brand Design, Corporate Identity und digitale Markenauftritte.",
+    "confidence": "high",
+    "sourceUrl": "https://eiga.design/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 164,
+    "name": "Fons Hickmann M23",
+    "providedUrl": "https://fonshickmann.com/",
+    "domain": "fonshickmann.com",
+    "location": "Berlin, Deutschland",
+    "profile": "Fons Hickmann M23 ist ein Studio für Kommunikationsdesign, Corporate Design, Plakat und Editorial Design für Kultur und Marken.",
+    "confidence": "high",
+    "sourceUrl": "https://fonshickmann.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 165,
+    "name": "5W (ehem. Fuenfwerken)",
+    "providedUrl": "https://www.fuenfwerken.com/",
+    "domain": "5w.design",
+    "location": "Wiesbaden, Deutschland",
+    "profile": "5W, früher Fuenfwerken, ist eine Designagentur für Branding, Corporate Design und nutzerorientierte digitale Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://5w.design/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 166,
+    "name": "g31",
+    "providedUrl": "https://www.g31design.com/",
+    "domain": "g31.design",
+    "location": "Düsseldorf, Deutschland",
+    "profile": "g31 ist eine Design- und Branding-Agentur für Markenidentitäten, Kampagnen und digitale Anwendungen.",
+    "confidence": "high",
+    "sourceUrl": "https://g31.design/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 167,
+    "name": "Grabarz & Partner",
+    "providedUrl": "https://grabarzundpartner.de/",
+    "domain": "grabarzundpartner.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "Grabarz & Partner ist eine unabhängige Werbeagentur für Kampagnen, Markenkommunikation und Kreation.",
+    "confidence": "high",
+    "sourceUrl": "https://grabarzundpartner.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 168,
+    "name": "Factor",
+    "providedUrl": "https://www.factor.partners/",
+    "domain": "factor.partners",
+    "location": "Hamburg, Deutschland",
+    "profile": "Factor ist eine Agentur für Strategie, Branding und Digital mit Schwerpunkt auf Markenführung und Corporate Design.",
+    "confidence": "high",
+    "sourceUrl": "https://www.factor.partners/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 169,
+    "name": "fischerAppelt",
+    "providedUrl": "https://www.fischerappelt.de/",
+    "domain": "fischerappelt.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "fischerAppelt ist eine Agentur für Kommunikation, Content-Marketing, PR und Kampagnen.",
+    "confidence": "high",
+    "sourceUrl": "https://www.fischerappelt.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 170,
+    "name": "GfG / Gruppe für Gestaltung",
+    "providedUrl": "https://www.gfg-id.de/",
+    "domain": "gfg-id.de",
+    "location": "Bremen, Deutschland",
+    "profile": "Die Gruppe für Gestaltung ist eine Agentur für Corporate Design, Markenkommunikation und Kommunikationsdesign.",
+    "confidence": "high",
+    "sourceUrl": "https://www.gfg-id.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 171,
+    "name": "hauser lacour",
+    "providedUrl": "https://www.hauserlacour.de/",
+    "domain": "hauserlacour.de",
+    "location": "Frankfurt am Main, Deutschland",
+    "profile": "hauser lacour ist ein Studio für Visual Branding, Corporate Design und Markenstrategie.",
+    "confidence": "high",
+    "sourceUrl": "https://www.hauserlacour.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 172,
+    "name": "HeimatTBWA\\ (ehem. Heimat)",
+    "providedUrl": "https://www.heimat-berlin.com/de/",
+    "domain": "heimattbwa.de",
+    "location": "Berlin, Deutschland",
+    "profile": "HeimatTBWA\\ ist eine Werbeagentur für Kampagnen, Markenkommunikation und Kreation.",
+    "confidence": "high",
+    "sourceUrl": "https://heimattbwa.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 173,
+    "name": "Heine Lenz Zizka (HLZ)",
+    "providedUrl": "https://www.hlz.de/",
+    "domain": "hlz.de",
+    "location": "Berlin und Frankfurt am Main, Deutschland",
+    "profile": "Heine Lenz Zizka ist ein Designbüro für Corporate Design, Branding und Kommunikation mit Schwerpunkt auf Marke und Identität.",
+    "confidence": "high",
+    "sourceUrl": "https://hlz.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 174,
+    "name": "hw.design",
+    "providedUrl": "https://www.hwdesign.de/",
+    "domain": "hwdesign.de",
+    "location": "München, Deutschland",
+    "profile": "hw.design ist eine Designagentur für Markenentwicklung, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.hwdesign.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 175,
+    "name": "Interbrand",
+    "providedUrl": "https://interbrand.com/cologne/",
+    "domain": "interbrand.com",
+    "location": "Köln, Deutschland",
+    "profile": "Interbrand ist eine internationale Markenberatung für Brand Strategy, Branding und Markenbewertung. Die Köln-Seite aus dem Praxis-Link existiert nicht mehr und leitet auf die Kontaktseite weiter.",
+    "confidence": "high",
+    "sourceUrl": "https://interbrand.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 176,
+    "name": "jäger & jäger",
+    "providedUrl": "https://www.jaegerundjaeger.de/",
+    "domain": "jaegerundjaeger.de",
+    "location": "Überlingen, Deutschland",
+    "profile": "jäger & jäger ist ein Büro für visuelle Kommunikation, Corporate Design, Editorial und Leitsysteme.",
+    "confidence": "high",
+    "sourceUrl": "https://www.jaegerundjaeger.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 177,
+    "name": "Jung von Matt BRAND IDENTITY",
+    "providedUrl": "https://www.jvm.bi/",
+    "domain": "jvm.bi",
+    "location": "Hamburg, Deutschland",
+    "profile": "Jung von Matt BRAND IDENTITY ist die Branding-Einheit von Jung von Matt für Markenstrategie, Corporate Design und Markenidentität.",
+    "confidence": "high",
+    "sourceUrl": "https://www.jvm.bi/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 178,
+    "name": "JUNO",
+    "providedUrl": "https://www.juno-hamburg.com/",
+    "domain": "juno-hamburg.com",
+    "location": "Hamburg, Deutschland",
+    "profile": "JUNO ist eine Branding- und Designagentur für Markenentwicklung und Corporate Design.",
+    "confidence": "high",
+    "sourceUrl": "https://juno-hamburg.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 179,
+    "name": "Karl Anders",
+    "providedUrl": "https://www.karlanders.de/",
+    "domain": "karlanders.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "Karl Anders ist ein Studio für zeitgenössisches Branding, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://karlanders.de/de/start/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 180,
+    "name": "Kehrer Verlag",
+    "providedUrl": "https://www.kehrerverlag.com/",
+    "domain": "kehrerverlag.com",
+    "location": "Heidelberg, Deutschland",
+    "profile": "Der Kehrer Verlag publiziert Bücher für Kunst und Fotografie und bietet Buchgestaltung und Herstellung.",
+    "confidence": "high",
+    "sourceUrl": "https://www.kehrerverlag.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 181,
+    "name": "KittoKatsu",
+    "providedUrl": "https://kittokatsu.de/",
+    "domain": "kittokatsu.de",
+    "location": "Düsseldorf, Deutschland",
+    "profile": "KittoKatsu ist eine Boutique-Agentur für Branding, Corporate Design und Markenkommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.kittokatsu.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 182,
+    "name": "kleiner und bold",
+    "providedUrl": "https://kleinerundbold.com/",
+    "domain": "kleinerundbold.com",
+    "location": "Berlin, Deutschland",
+    "profile": "kleiner und bold ist eine Marken- und Designagentur für Markenstrategie, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://kleinerundbold.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 183,
+    "name": "KMS TEAM",
+    "providedUrl": "https://www.kms-team.com/",
+    "domain": "kms-team.com",
+    "location": "München, Deutschland",
+    "profile": "KMS TEAM ist eine Beratung für Markenstrategie und Design mit Fokus auf Corporate Branding.",
+    "confidence": "high",
+    "sourceUrl": "https://www.kms-team.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 184,
+    "name": "KNSK",
+    "providedUrl": "https://www.knsk.de/",
+    "domain": "knsk.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "KNSK ist eine Werbeagentur für Kampagnen, Markenkommunikation und Kreation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.knsk.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 185,
+    "name": "Kochan & Partner",
+    "providedUrl": "https://www.kochan.de/",
+    "domain": "kochan.de",
+    "location": "München, Deutschland",
+    "profile": "Kochan & Partner ist eine Branding-Agentur für Marke, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.kochan.de/de",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 186,
+    "name": "Koto",
+    "providedUrl": "https://koto.com/",
+    "domain": "koto.com",
+    "location": "Berlin, Deutschland",
+    "profile": "Koto ist eine internationale Kreativagentur für Brand Strategy, Branding, Identity und digitale Markenauftritte.",
+    "confidence": "high",
+    "sourceUrl": "https://koto.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 187,
+    "name": "LIGALUX",
+    "providedUrl": "https://www.ligalux.de/",
+    "domain": "ligalux.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "LIGALUX ist eine Agentur für Markenführung, Corporate Design, Kommunikation und Kampagnen.",
+    "confidence": "high",
+    "sourceUrl": "https://www.ligalux.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 188,
+    "name": "loved",
+    "providedUrl": "https://www.loved.de/de",
+    "domain": "loved.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "loved ist eine Agentur für Brand Design, Kommunikation und Kampagnen.",
+    "confidence": "high",
+    "sourceUrl": "https://www.loved.de/de",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 189,
+    "name": "Make Studio",
+    "providedUrl": "https://make.studio/",
+    "domain": "make.studio",
+    "location": "Hamburg, Deutschland",
+    "profile": "Make Studio ist ein Designstudio für Branding, Identity und digitale Gestaltung.",
+    "confidence": "high",
+    "sourceUrl": "https://make.studio/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 190,
+    "name": "Martin et Karczinski",
+    "providedUrl": "https://www.martinetkarczinski.de/",
+    "domain": "martinetkarczinski.de",
+    "location": "München, Deutschland",
+    "profile": "Martin et Karczinski ist eine Agentur für Markenstrategie, Brand Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.martinetkarczinski.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 191,
+    "name": "MetaDesign",
+    "providedUrl": "https://metadesign.com/de/",
+    "domain": "metadesign.com",
+    "location": "Berlin, Düsseldorf und Zürich",
+    "profile": "MetaDesign ist eine Brand Agency für Markenstrategie, Corporate Design, Identity und digitale Markenerlebnisse.",
+    "confidence": "high",
+    "sourceUrl": "https://metadesign.com/de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 192,
+    "name": "Moby Digg",
+    "providedUrl": "https://www.mobydigg.de/",
+    "domain": "mobydigg.de",
+    "location": "München, Deutschland",
+    "profile": "Moby Digg ist eine Design- und Branding-Agentur für Markenidentität, Kommunikation und digitale Gestaltung.",
+    "confidence": "high",
+    "sourceUrl": "https://mobydigg.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 193,
+    "name": "Moniteurs",
+    "providedUrl": "https://www.moniteurs.de/",
+    "domain": "moniteurs.de",
+    "location": "Berlin, Deutschland",
+    "profile": "Moniteurs ist ein Büro für Kommunikationsdesign mit Schwerpunkt Corporate Design, Leitsysteme und Ausstellungsgestaltung.",
+    "confidence": "high",
+    "sourceUrl": "https://www.moniteurs.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 194,
+    "name": "Morphoria Design Collective",
+    "providedUrl": "https://www.morphoria.com/de/",
+    "domain": "morphoria.com",
+    "location": "Düsseldorf, Deutschland",
+    "profile": "Morphoria ist ein Branding- und Designstudio für Markenidentitäten, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://morphoria.com/de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 195,
+    "name": "Neue Gestaltung",
+    "providedUrl": "https://neuegestaltung.de/",
+    "domain": "neuegestaltung.de",
+    "location": "Berlin, Deutschland",
+    "profile": "Neue Gestaltung ist ein Studio für Corporate Design, Branding, Editorial und Ausstellung für Kultur, Wissenschaft und Unternehmen.",
+    "confidence": "high",
+    "sourceUrl": "https://neuegestaltung.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 196,
+    "name": "Neusitzer Brand Identity",
+    "providedUrl": "https://nbidentity.de/",
+    "domain": "nbidentity.de",
+    "location": "Düsseldorf, Deutschland",
+    "profile": "Neusitzer Brand Identity ist eine Agentur für Markenidentität, Corporate Design und Markenstrategie.",
+    "confidence": "high",
+    "sourceUrl": "https://nbidentity.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 197,
+    "name": "Novamondo",
+    "providedUrl": "https://www.novamondo.de/",
+    "domain": "novamondo.de",
+    "location": "Berlin, Deutschland",
+    "profile": "Novamondo ist eine Designagentur für Marken, Corporate Design, Kommunikation und Motion.",
+    "confidence": "high",
+    "sourceUrl": "https://novamondo.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 198,
+    "name": "Oktober Kommunikationsdesign",
+    "providedUrl": "https://oktober.de/",
+    "domain": "oktober.de",
+    "location": "Bochum, Deutschland",
+    "profile": "Oktober ist eine international ausgezeichnete Agentur für Corporate Design, Branding, Grafikdesign, Websites und Werbung.",
+    "confidence": "high",
+    "sourceUrl": "https://oktober.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 199,
+    "name": "Panatom",
+    "providedUrl": "https://www.panatom.com/",
+    "domain": "panatom.com",
+    "location": "Berlin, Deutschland",
+    "profile": "Panatom ist ein Studio für Corporate Design, Branding und Editorial Design für Kultur und Unternehmen.",
+    "confidence": "high",
+    "sourceUrl": "https://www.panatom.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 200,
+    "name": "Persuaid",
+    "providedUrl": "https://www.persuaid.de/de/",
+    "domain": "persuaid.de",
+    "location": "München, Deutschland",
+    "profile": "Persuaid ist eine Branding-Agentur für Marke, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.persuaid.de/de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 201,
+    "name": "Peter Schmidt Group",
+    "providedUrl": "https://www.peter-schmidt-group.de/",
+    "domain": "peter-schmidt-group.de",
+    "location": "Frankfurt am Main und Hamburg, Deutschland",
+    "profile": "Die Peter Schmidt Group ist eine Agentur für Markenstrategie, Corporate Design, Packaging und Brand Experience.",
+    "confidence": "high",
+    "sourceUrl": "https://www.peter-schmidt-group.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 202,
+    "name": "Realgestalt",
+    "providedUrl": "https://www.realgestalt.de/",
+    "domain": "realgestalt.de",
+    "location": "Berlin, Deutschland",
+    "profile": "Realgestalt ist eine Agentur für Corporate Design, Branding und Markenkommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.realgestalt.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 203,
+    "name": "ringzwei",
+    "providedUrl": "https://ringzwei.com/",
+    "domain": "ringzwei.com",
+    "location": "Hamburg, Deutschland",
+    "profile": "ringzwei ist eine Agentur für Markenkommunikation, Branding und Kampagnen.",
+    "confidence": "high",
+    "sourceUrl": "https://ringzwei.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 204,
+    "name": "Scholz & Friends",
+    "providedUrl": "https://www.s-f.com/",
+    "domain": "s-f.family",
+    "location": "Berlin, Deutschland",
+    "profile": "Scholz & Friends ist eine Agenturgruppe für Werbung, Kampagnen, Markenkommunikation und Kreation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.s-f.family/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 205,
+    "name": "Sherpa Design",
+    "providedUrl": "https://www.sherpa-design.de/",
+    "domain": "sherpa-design.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "Sherpa Design ist eine Agentur für Branding und Corporate Design.",
+    "confidence": "high",
+    "sourceUrl": "https://www.sherpa-design.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 206,
+    "name": "sons of ipanema",
+    "providedUrl": "https://www.sonsofipanema.de/",
+    "domain": "sonsofipanema.de",
+    "location": "Köln, Deutschland",
+    "profile": "sons of ipanema ist eine Designagentur für Grafikdesign, Illustration, Art Direction, Branding, Webdesign und Animation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.sonsofipanema.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 207,
+    "name": "Stahl R",
+    "providedUrl": "https://stahl-r.com/",
+    "domain": "stahl-r.com",
+    "location": "Berlin, Deutschland",
+    "profile": "Stahl R ist ein Designbüro für Corporate Design, Editorial und Kommunikation für Kultur, Architektur und Unternehmen.",
+    "confidence": "high",
+    "sourceUrl": "https://stahl-r.com/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 208,
+    "name": "Stan Hema",
+    "providedUrl": "https://www.stanhema.com/",
+    "domain": "stanhema.com",
+    "location": "Berlin, Deutschland",
+    "profile": "Stan Hema ist eine Brand Agency für Strategie, Design und Transformation von Marken.",
+    "confidence": "high",
+    "sourceUrl": "https://stanhema.com/en",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 209,
+    "name": "Studio ZX",
+    "providedUrl": "https://studiozx.de/",
+    "domain": "studiozx.de",
+    "location": "Hamburg, Frankfurt am Main und Berlin, Deutschland",
+    "profile": "Studio ZX ist die Kreativagentur der ZEIT Verlagsgruppe für Content, Kampagnen und Markenkommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://studiozx.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 210,
+    "name": "Strichpunkt",
+    "providedUrl": "https://www.strichpunkt-design.de/",
+    "domain": "sp.design",
+    "location": "Stuttgart, Berlin und Hamburg, Deutschland",
+    "profile": "Strichpunkt ist eine Branding-Agentur für Markenidentität, Corporate Design und Berichterstattung im DACH-Raum.",
+    "confidence": "high",
+    "sourceUrl": "https://sp.design/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 211,
+    "name": "Syndicate",
+    "providedUrl": "https://www.syndicate.de/",
+    "domain": "syndicate.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "Syndicate ist eine Brand-Design-Agentur für Markenidentität, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://syndicate.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 212,
+    "name": "think moto",
+    "providedUrl": "https://thinkmoto.de/en",
+    "domain": "thinkmoto.de",
+    "location": "Berlin, Deutschland",
+    "profile": "think moto ist eine Brand Agency für Markenstrategie, Identity und digitale Markenkommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://thinkmoto.de/en/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 213,
+    "name": "thjnk",
+    "providedUrl": "https://www.thjnk.de/",
+    "domain": "thjnk.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "thjnk ist eine Werbeagentur für Kampagnen, Markenkommunikation und Kreation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.thjnk.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 214,
+    "name": "Tom Leifer Design",
+    "providedUrl": "https://tomleiferdesign.de/",
+    "domain": "tomleiferdesign.de",
+    "location": "Hamburg, Deutschland",
+    "profile": "Tom Leifer Design ist ein Studio für Editorial Design, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://tomleiferdesign.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 215,
+    "name": "Verlag Hermann Schmidt",
+    "providedUrl": "https://typografie.de/",
+    "domain": "typografie.de",
+    "location": "Mainz, Deutschland",
+    "profile": "Der Verlag Hermann Schmidt ist ein Fachverlag für Typografie, Grafikdesign und Gestaltung.",
+    "confidence": "high",
+    "sourceUrl": "https://typografie.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 216,
+    "name": "wirDesign",
+    "providedUrl": "https://www.wirdesign.de/",
+    "domain": "wirdesign.de",
+    "location": "Braunschweig und Berlin, Deutschland",
+    "profile": "wirDesign ist eine Marken- und Designagentur für Brand Performance, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.wirdesign.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 217,
+    "name": "Wynken Blynken & Nod",
+    "providedUrl": "https://www.wynken.com/",
+    "domain": "wynken.com",
+    "location": "Hamburg, Deutschland",
+    "profile": "Wynken Blynken & Nod ist ein Studio für Branding, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.wynken.com/de",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 218,
+    "name": "Zeichen & Wunder",
+    "providedUrl": "https://www.zeichenundwunder.de/",
+    "domain": "zeichenundwunder.de",
+    "location": "München, Deutschland",
+    "profile": "Zeichen & Wunder ist eine Branding- und Designagentur für Markenstrategie, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://www.zeichenundwunder.de/",
+    "categories": [
+      "Praxis: Überregional"
+    ]
+  },
+  {
+    "id": 219,
+    "name": "Bold Scandinavia",
+    "providedUrl": "https://www.boldscandinavia.com/",
+    "domain": "boldscandinavia.com",
+    "location": "Stockholm, Schweden; Kopenhagen, Dänemark; Oslo, Norwegen",
+    "profile": "Bold ist eine skandinavische Agentur für Branding, Design und digitale Markenerlebnisse.",
+    "confidence": "high",
+    "sourceUrl": "https://boldscandinavia.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 220,
+    "name": "Bruce Mau Design",
+    "providedUrl": "https://www.brucemaudesign.com/",
+    "domain": "brucemaudesign.com",
+    "location": "Toronto, Kanada",
+    "profile": "Bruce Mau Design ist ein Studio für Branding, Identity und Brand Experience.",
+    "confidence": "high",
+    "sourceUrl": "https://www.brucemaudesign.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 221,
+    "name": "Essen International",
+    "providedUrl": "https://www.essen.se/",
+    "domain": "esseninternational.com",
+    "location": "Stockholm, Schweden; New York, USA",
+    "profile": "Essen International ist eine Boutique-Agentur für Branding und Design.",
+    "confidence": "high",
+    "sourceUrl": "https://esseninternational.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 222,
+    "name": "Fraser Muggeridge studio",
+    "providedUrl": "https://pleasedonotbend.co.uk/",
+    "domain": "pleasedonotbend.co.uk",
+    "location": "London, Vereinigtes Königreich",
+    "profile": "Fraser Muggeridge studio ist ein Grafikdesignstudio für Editorial Design, Typografie und Kommunikation für Kunst und Kultur.",
+    "confidence": "high",
+    "sourceUrl": "https://pleasedonotbend.co.uk/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 223,
+    "name": "Gretel",
+    "providedUrl": "https://gretelny.com/",
+    "domain": "gretelny.com",
+    "location": "Brooklyn, New York, USA",
+    "profile": "Gretel ist ein Studio für Branding, Identity und Motion für Medien- und Kulturmarken.",
+    "confidence": "high",
+    "sourceUrl": "https://gretelny.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 224,
+    "name": "gyselroth",
+    "providedUrl": "https://gyselroth.com/",
+    "domain": "gyselroth.com",
+    "location": "Zürich, Schweiz",
+    "profile": "gyselroth ist eine Agentur für Branding, Design und digitale Lösungen.",
+    "confidence": "high",
+    "sourceUrl": "https://www.gyselroth.com/en",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 225,
+    "name": "Hey",
+    "providedUrl": "https://heystudio.es/",
+    "domain": "heystudio.es",
+    "location": "Barcelona, Spanien",
+    "profile": "Hey ist ein Kreativstudio für Branding, Illustration und Grafikdesign.",
+    "confidence": "high",
+    "sourceUrl": "https://heystudio.es/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 226,
+    "name": "Kontrapunkt",
+    "providedUrl": "https://www.kontrapunkt.com/",
+    "domain": "kontrapunkt.com",
+    "location": "Kopenhagen, Dänemark",
+    "profile": "Kontrapunkt ist eine Agentur für Branding, Typografie und Identity.",
+    "confidence": "high",
+    "sourceUrl": "https://kontrapunkt.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 227,
+    "name": "Kurppa Hosk",
+    "providedUrl": "https://www.kurppahosk.com/",
+    "domain": "kurppahosk.com",
+    "location": "Stockholm, Schweden",
+    "profile": "Kurppa Hosk ist eine Brand Agency für Markenstrategie, Identity und Design mit Standorten in Stockholm, Oslo, New York, Chicago und London.",
+    "confidence": "high",
+    "sourceUrl": "https://www.kurppahosk.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 228,
+    "name": "MAKEBARDO",
+    "providedUrl": "https://www.makebardo.com/",
+    "domain": "makebardo.com",
+    "location": "Queenstown, Neuseeland",
+    "profile": "MAKEBARDO ist ein Studio für Branding und Grafikdesign. Die Website war bei der Prüfung im November 2026 im Umbau und verweist auf Behance und Instagram.",
+    "confidence": "high",
+    "sourceUrl": "https://www.makebardo.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 229,
+    "name": "moodley",
+    "providedUrl": "https://moodley.com/",
+    "domain": "moodley.com",
+    "location": "Wien, Österreich",
+    "profile": "moodley ist ein Unternehmen für Marken- und Business-Transformation, Markenstrategie und Corporate Design.",
+    "confidence": "high",
+    "sourceUrl": "https://moodley.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 230,
+    "name": "Mucho",
+    "providedUrl": "https://wearemucho.com/",
+    "domain": "wearemucho.com",
+    "location": "Barcelona, Spanien; San Francisco, USA",
+    "profile": "Mucho ist eine Design- und Branding-Agentur für Identity, Editorial und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://wearemucho.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 231,
+    "name": "Saffron Brand Consultants",
+    "providedUrl": "https://saffron-consultants.com/",
+    "domain": "saffron-consultants.com",
+    "location": "Madrid, Spanien; Wien, Österreich; London, Vereinigtes Königreich",
+    "profile": "Saffron ist eine Markenberatung für Brand Strategy, Identity und Naming.",
+    "confidence": "high",
+    "sourceUrl": "https://saffron-consultants.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 232,
+    "name": "Söderhavet",
+    "providedUrl": "https://soderhavet.com/",
+    "domain": "soderhavet.com",
+    "location": "Stockholm, Schweden",
+    "profile": "Söderhavet ist eine Brand-Design-Agentur für Markenidentität, Corporate Design und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://soderhavet.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 233,
+    "name": "Stockholm Design Lab",
+    "providedUrl": "https://www.stockholmdesignlab.se/",
+    "domain": "stockholmdesignlab.se",
+    "location": "Stockholm, Schweden",
+    "profile": "Stockholm Design Lab ist ein Studio für Brand Identity, Corporate Design und Markenstrategie.",
+    "confidence": "high",
+    "sourceUrl": "https://www.stockholmdesignlab.se/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 234,
+    "name": "Studio Dumbar",
+    "providedUrl": "https://www.studiodumbar.com/",
+    "domain": "studiodumbar.com",
+    "location": "Rotterdam, Niederlande",
+    "profile": "Studio Dumbar ist ein Studio für visuelle Markenidentität, Motion und Branding.",
+    "confidence": "high",
+    "sourceUrl": "https://studiodumbar.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 235,
+    "name": "studio FM milano",
+    "providedUrl": "https://studiofmmilano.com/EN/Home/",
+    "domain": "studiofmmilano.com",
+    "location": "Mailand, Italien",
+    "profile": "studio FM milano ist ein Studio für Grafikdesign, Corporate Identity, Editorial und Ausstellungsgrafik.",
+    "confidence": "high",
+    "sourceUrl": "https://studiofmmilano.com/",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 236,
+    "name": "Summa Branding",
+    "providedUrl": "https://summabranding.com/en",
+    "domain": "summabranding.com",
+    "location": "Madrid und Barcelona, Spanien; Lissabon, Portugal",
+    "profile": "Summa ist eine Branding-Agentur für Markenstrategie, Identity und Kommunikation.",
+    "confidence": "high",
+    "sourceUrl": "https://summabranding.com/en",
+    "categories": [
+      "Praxis: Ausland"
+    ]
+  },
+  {
+    "id": 237,
+    "name": "Werklig",
+    "providedUrl": "https://werklig.com/",
+    "domain": "werklig.com",
+    "location": "Helsinki, Finnland",
+    "profile": "Werklig ist eine finnische Brand- und Designagentur, die mit sozial engagierten Marken arbeitet.",
+    "confidence": "high",
+    "sourceUrl": "https://werklig.com/",
+    "categories": [
+      "Praxis: Ausland",
       "Ethik/Gendergerechtigkeit"
     ]
   }
