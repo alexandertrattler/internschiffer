@@ -1818,24 +1818,20 @@ body.resizing .resize-handle {
   gap: 2px;
 }
 
-/* Unfold icon instead of the "N Städte" label */
+/* Country pill with the city toggle built in: [Deutschland 192 | 36 »] */
 .location-toggle {
-  display: inline-grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  border-radius: 999px;
-  color: rgba(255, 255, 255, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: rgba(255, 255, 255, 0.55);
+  font-variant-numeric: tabular-nums;
 }
 
-.location-toggle:hover,
-.location-toggle:focus-visible {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.location-toggle svg {
+.location-toggle-arrow {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1;
+  transform: translateY(-1px);
   transition: transform 160ms ease;
 }
 
@@ -1843,6 +1839,53 @@ body.resizing .resize-handle {
   color: var(--accent);
 }
 
-.location-toggle[aria-expanded="true"] svg {
-  transform: rotate(180deg);
+.location-toggle[aria-expanded="true"] .location-toggle-arrow {
+  transform: translateY(-1px) rotate(90deg);
+}
+
+@media (min-width: 981px) {
+  .location-group-head.has-cities {
+    display: inline-flex;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .location-group-head.has-cities:hover {
+    border-color: rgba(124, 121, 255, 0.72);
+    box-shadow: 0 0 0 2px rgba(124, 121, 255, 0.13);
+  }
+
+  .location-group-head.has-cities .chip,
+  .location-group-head.has-cities .chip:hover,
+  .location-group-head.has-cities .chip:focus {
+    background: transparent;
+    border-color: transparent;
+    border-radius: 999px 0 0 999px;
+    box-shadow: none;
+  }
+
+  .location-group-head.has-cities .chip.active {
+    background: var(--accent);
+  }
+
+  .location-group-head.has-cities:has(.chip.active) {
+    border-color: var(--accent);
+  }
+
+  .location-group-head.has-cities .location-toggle {
+    align-self: stretch;
+    padding: 0 10px 0 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0 999px 999px 0;
+    font-size: 11px;
+  }
+
+  .location-group-head.has-cities .location-toggle:hover,
+  .location-group-head.has-cities .location-toggle:focus-visible {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+  }
 }
