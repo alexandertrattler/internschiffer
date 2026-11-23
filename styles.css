@@ -1745,3 +1745,20 @@ body {
     margin: 2px 0 6px 6px;
   }
 }
+
+.filter-item {
+  display: contents;
+}
+
+@media (max-width: 980px) {
+  .filters .filter-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    white-space: nowrap;
+  }
+
+  .filters .filter-item .filter-separator {
+    margin: 0;
+  }
+}

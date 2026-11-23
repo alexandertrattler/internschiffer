@@ -388,9 +388,13 @@ const makeFilterSeparator = () => {
   return separator;
 };
 
-const withFilterSeparators = (chips) => chips.flatMap((chip, index) => (
-  index === chips.length - 1 ? [chip] : [chip, makeFilterSeparator()]
-));
+const withFilterSeparators = (chips) => chips.map((chip, index) => {
+  if (index === chips.length - 1) return chip;
+  const item = document.createElement("span");
+  item.className = "filter-item";
+  item.append(chip, makeFilterSeparator());
+  return item;
+});
 
 const countBy = (items, getKeys) => {
   const counts = new Map();
