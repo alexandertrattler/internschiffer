@@ -357,7 +357,8 @@ const makeCountryGroup = (country) => {
   toggle.type = "button";
   toggle.className = "location-toggle";
   toggle.setAttribute("aria-expanded", String(expanded));
-  toggle.textContent = expanded ? `${cities.length} Städte ▴` : `${cities.length} Städte ▾`;
+  const cityWord = cities.length === 1 ? "Stadt" : "Städte";
+  toggle.textContent = `${cities.length} ${cityWord} ${expanded ? "▴" : "▾"}`;
   toggle.addEventListener("click", () => {
     if (state.expandedCountries.has(country.key)) state.expandedCountries.delete(country.key);
     else state.expandedCountries.add(country.key);
