@@ -360,7 +360,7 @@ const makeCountryGroup = (country) => {
   const cityWord = cities.length === 1 ? "Stadt" : "Städte";
   toggle.setAttribute("aria-label", `${cities.length} ${cityWord} in ${country.label} ${expanded ? "zuklappen" : "aufklappen"}`);
   toggle.title = `${cities.length} ${cityWord}`;
-  toggle.innerHTML = `<span class="location-toggle-count">${cities.length}</span><span class="location-toggle-arrow" aria-hidden="true">»</span>`;
+  toggle.innerHTML = `<span class="location-toggle-count">${cities.length}</span>`;
   toggle.addEventListener("click", () => {
     if (state.expandedCountries.has(country.key)) state.expandedCountries.delete(country.key);
     else state.expandedCountries.add(country.key);
